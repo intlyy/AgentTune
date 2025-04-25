@@ -68,8 +68,8 @@ def remove_comments(json_string):
 def call_open_source_llm(model, messages,filename):
 
     client = OpenAI(
-        api_key="", 
-        base_url=""
+        api_key=config['knob selector']['api_key'], 
+        base_url=config['knob selector']['base_url']
     )
 
     completion = client.chat.completions.create(

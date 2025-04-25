@@ -12,7 +12,6 @@ class WP2(WP):
         if self.dbs==None:
             print("fatal error: dbs not initialization correctly.")
             return
-
         else:
             read_cnt=0
             write_cnt=0
@@ -20,11 +19,17 @@ class WP2(WP):
             group_by_num=0
             order_by_num=0
             aggr_num=0
+            desc_num=0
+            non_agg_count=0
             
             tbl_dict={}
             tbl_col_dict={}
-            # dict[tbl_name][col_name]=col_cnt
+            predicate_dict={}
+            predicate_type=["=",">","<",">=","<="]
+            for i in predicate_type:
+                predicate_dict[i]=0
             
+            # Set the output window environment to display all information
             pd.set_option('max_colwidth',None)
             df = pd.read_csv(workload_path, header=None,on_bad_lines='skip',sep = r'\s+\n',index_col=0,engine='python') 
             # df=pd.read_csv("seats_workload.txt",header=None)
@@ -56,12 +61,33 @@ class WP2(WP):
                     else:
                         tbl_dict[table_name]+=1
                 
+                match = re.search(r'SELECT\s+(.*?)\s+FROM', sql_list[i], re.IGNORECASE)
+                
+                if match:
+                    columns_part = match.group(1).strip()
+                    if columns_part=='*':
+                        non_agg_count+=1
+                        warnings.warn(
+                            "Detected SELECT * usage, which may affect performance and result in unnecessary column returns",
+                            category=RuntimeWarning
+                        )
+                    else:
+                        agg_pattern=re.compile(
+                            r'\b(COUNT|SUM|AVG|MAX|MIN|STDDEV|VARIANCE|GROUP_CONCAT)\s*\(.*?\)',
+                            re.IGNORECASE
+                        )
+                    columns = [col.strip() for col in columns_part.split(',')]
+                    for col in columns:
+                        if not agg_pattern.search(col):
+                            non_agg_count+=1
+                    # print(non_agg_count)
+    
                 simple_sql_token_list=re.split(r'[\(,;\s\)\n\t]+',sql_list[i])
                 if simple_sql_token_list.__contains__("")==True:
                     simple_sql_token_list.remove("")
                 # print(simple_sql_token_list)
                 cnt_bool=False
-
+                #  Query Semantic Features
                 for id,j in enumerate(simple_sql_token_list):
                     if cnt_bool==False:
                         if j.upper()=='SELECT':
@@ -79,12 +105,16 @@ class WP2(WP):
                         order_by_num+=1
                     elif j.upper()=="SUM" or j.upper()=="MIN" or j.upper()=="MAX" or j.upper()=="AVG":
                         aggr_num+=1
+                    elif j.upper()=="DESC":
+                        desc_num+=1
+                    elif j in predicate_type:
+                        predicate_dict[j]+=1
                     else:
                         # if j=='supplier':
                         #     print(simple_sql_token_list[id-1:id+5])
                         pass
                         
-
+                # Data Access Features
                 for token in simple_sql_token_list:
                     for tb_tmp in real_tb_used:
                         for col_tmp in tbl_col_dict[tb_tmp].keys():
@@ -120,7 +150,6 @@ class WP2(WP):
                 minv=tbl_dict[i]
                 mini=i
                 
-
         print("type of workload :",workload_path)
         # print("total token num :",len(token_list))
         print("sample SQL1:",re.split(r'[,;\s\n\t\(\)]+',str(df.iloc[0].name)))
@@ -133,6 +162,15 @@ class WP2(WP):
         print("average predicate num per SQL :",str(predicate_num/(read_cnt+write_cnt)))
         print("max visited table :",maxi,str(maxv/sumv))
         print("min visited table :",mini,str(minv/sumv))
+        
+        print("average table access count :",sumv/tokens.count(";"))
+        print("average item returned count per query :",non_agg_count/tokens.count(";"))
+        print("order by logic ratio :",(order_by_num-desc_num)/order_by_num,"(asc):",desc_num/order_by_num,"(desc)")
+        
+        print("where clause comparison condition ratio :")
+        for i in predicate_type:
+            print("\t",i,predicate_dict[i]/sum(predicate_dict.values()))
+        
         print("table access pattern :")
         # tbl_dict record the access patterns of each table and column
         for i in tbl_dict:

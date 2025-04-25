@@ -7,9 +7,10 @@ This is the source code to the paper "AgentTune: A Multi-Agent Collaborative Fra
 
 
 
-* [Environment Installation](https://anonymous.4open.science/r/AgentTune#environment-installation)
-* [Workload Preparation](https://anonymous.4open.science/r/AgentTune#workload-preparation)
-* [Quick Start](https://anonymous.4open.science/r/AgentTune#Quick-Start)
+* [Environment Installation](https://anonymous.4open.science/r/AgentTune)
+* [Workload Preparation](https://anonymous.4open.science/r/AgentTune)
+* [Candidate Knobs Preparation](https://anonymous.4open.science/r/AgentTune)
+* [Quick Start](https://anonymous.4open.science/r/AgentTune)
 
 
 
@@ -73,6 +74,9 @@ Follow the instructions of https://github.com/winkyao/join-order-benchmark to lo
 
 ### TPCC and TPC-DS
 Follow the instructions of https://www.tpc.org/default5.asp to prepare TPC benchmarks.
+
+## Candidate Knobs Preparation
+In `./knob selector/get_candidate_knobs/`, we use MySQL as an example to demonstrate how to quickly obtain candidate knobs by processing the official documentation.
 
 ## Quick Start
 

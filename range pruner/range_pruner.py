@@ -87,8 +87,8 @@ def extract_knob_intervals_with_ids(text):
 
 def call_open_source_llm(model,knob_list):
     client = OpenAI(
-        api_key="", 
-        base_url=""
+        api_key=config['knob selector']['api_key'], 
+        base_url=config['knob selector']['base_url']
     )
 
     messages = [

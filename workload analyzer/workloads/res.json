@@ -1,0 +1,3100 @@
+{
+    "Table Schema": "public",
+    "Tables": [
+        {
+            "Table Name": "sbtest1",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest10",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest11",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest12",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest13",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest14",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest15",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest16",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest17",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest18",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest19",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest2",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest20",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest21",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest22",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest23",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest24",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest25",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest26",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest27",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest28",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest29",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest3",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest30",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest31",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest32",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest33",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest34",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest35",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest36",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest37",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest38",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest39",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest4",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest40",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest41",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest42",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest43",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest44",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest45",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest46",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest47",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest48",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest49",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest5",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest50",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest6",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest7",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest8",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        },
+        {
+            "Table Name": "sbtest9",
+            "Table Columns": [
+                {
+                    "Column Name": "id",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "k",
+                    "Data Type": "int",
+                    "Data Type Mod": 0,
+                    "Data Distribution": [
+                        0,
+                        1000000
+                    ]
+                },
+                {
+                    "Column Name": "c",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 120,
+                    "Data Distribution": [
+                        120,
+                        120
+                    ]
+                },
+                {
+                    "Column Name": "pad",
+                    "Data Type": "bpchar",
+                    "Data Type Mod": 60,
+                    "Data Distribution": [
+                        60,
+                        60
+                    ]
+                }
+            ],
+            "Column Distribution": [
+                0.25,
+                0.25,
+                0.25,
+                0.25
+            ],
+            "Primary Key": {
+                "Name": "",
+                "Data Type": ""
+            },
+            "Foreign Key": [
+                {
+                    "Foreign Key Name": "",
+                    "Foreign Key Type": "",
+                    "Referenced Table": "",
+                    "Referenced Primary Key": "",
+                    "Referenced Primary Key Type": ""
+                }
+            ]
+        }
+    ],
+    "Constraints": {
+        "size of workload": 100,
+        "read write ratio": 0.9,
+        "average table num": [
+            0.5,
+            0.5
+        ],
+        "table-query access distribution": [
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02,
+            0.02
+        ],
+        "query comparison operator ratio": [
+            0.25,
+            0.25,
+            0.25,
+            0.25
+        ],
+        "table domain distribution": [
+            0.5,
+            0.5
+        ],
+        "query logic predicate num": [
+            0.4,
+            0.4,
+            0.2
+        ],
+        "average aggregation operator num": [
+            0.5,
+            0.3,
+            0.2
+        ],
+        "average query colomn num": [
+            0,
+            0.4,
+            0.3,
+            0.3
+        ],
+        "group by ratio if read SQL": [
+            0.8,
+            0.2
+        ],
+        "order by desc or asc if grouped": [
+            0.85,
+            0.15
+        ]
+    },
+    "Generation File": "/home/lzz/SuperWG/res/res.wg"
+}

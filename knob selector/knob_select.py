@@ -44,8 +44,8 @@ messages = [
 
 def call_open_source_llm_1(model):
     client = OpenAI(
-        api_key="", 
-        base_url=""
+        api_key=config['knob selector']['api_key'], 
+        base_url=config['knob selector']['base_url']
     )
 
     completion = client.chat.completions.create(
