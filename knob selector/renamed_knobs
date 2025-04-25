@@ -1,0 +1,647 @@
+{
+    "knob1": {
+        "max": 1073741824,
+        "min": 1024,
+        "type": "integer",
+        "description": "The maximum size of internal in-memory temporary tables."
+    },
+    "knob2": {
+        "max": 1073741824,
+        "min": 16384,
+        "type": "integer",
+        "description": "This variable sets the maximum size to which user-created MEMORY tables are permitted to grow."
+    },
+    "knob3": {
+        "max": 134217728,
+        "min": 8192,
+        "type": "integer",
+        "description": "The size in bytes of the persistent buffer used for statement parsing and execution."
+    },
+    "knob4": {
+        "max": 1000,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines the maximum number of threads permitted inside of InnoDB."
+    },
+    "knob5": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "When enabled (the default), InnoDB stores all data twice, first to the doublewrite buffer, then to the actual data files."
+    },
+    "knob6": {
+        "max": 134217728,
+        "min": 32768,
+        "type": "integer",
+        "description": "Each session that must perform a sort allocates a buffer of this size."
+    },
+    "knob7": {
+        "enum_values": [
+            "TABLE",
+            "FILE",
+            "NONE"
+        ],
+        "type": "enum",
+        "description": "The destination or destinations for general query log and slow query log output."
+    },
+    "knob8": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Whether the general query log is enabled."
+    },
+    "knob9": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Enables the random read-ahead technique for optimizing InnoDB I/O."
+    },
+    "knob10": {
+        "max": 8589934592,
+        "min": 5242880,
+        "type": "integer",
+        "description": "The size in bytes of the buffer pool, the memory area where InnoDB caches table and index data."
+    },
+    "knob11": {
+        "max": 99,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines a low water mark representing the percentage of dirty pages at which preflushing is enabled to control the dirty page ratio."
+    },
+    "knob12": {
+        "max": 32,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of background threads devoted to the InnoDB purge operation."
+    },
+    "knob13": {
+        "max": 64,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of open tables cache instances."
+    },
+    "knob14": {
+        "max": 100,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines the compression failure rate threshold for a table, as a percentage, at which point MySQL begins adding padding within compressed pages to avoid expensive compression failures."
+    },
+    "knob15": {
+        "enum_values": [
+            "none",
+            "inserts",
+            "deletes",
+            "changes",
+            "purges",
+            "all"
+        ],
+        "type": "enum",
+        "description": "Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially."
+    },
+    "knob16": {
+        "max": 18446700000000000000,
+        "min": 65536,
+        "type": "integer",
+        "description": "Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables."
+    },
+    "knob17": {
+        "max": 5000,
+        "min": 1,
+        "type": "integer",
+        "description": "Defines the number of undo log pages that purge parses and processes in one batch from the history list."
+    },
+    "knob18": {
+        "max": 99,
+        "min": 0,
+        "type": "integer",
+        "description": "The number of days for automatic binary log file removal."
+    },
+    "knob19": {
+        "max": 10240,
+        "min": 100,
+        "type": "integer",
+        "description": "A parameter that influences the algorithms and heuristics for the flush operation for the InnoDB buffer pool."
+    },
+    "knob20": {
+        "max": 99,
+        "min": 0,
+        "type": "integer",
+        "description": "InnoDB tries to flush data from the buffer pool so that the percentage of dirty pages does not exceed this value."
+    },
+    "knob21": {
+        "max": 64,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of I/O threads for write operations in InnoDB."
+    },
+    "knob22": {
+        "max": 100,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE ."
+    },
+    "knob23": {
+        "max": 30,
+        "min": 0,
+        "type": "integer",
+        "description": "This variable indicates the number of digits by which to increase the scale of the result of division operations performed with the / operator."
+    },
+    "knob24": {
+        "max": 6000,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum delay between polls for a spin lock."
+    },
+    "knob25": {
+        "max": 75,
+        "min": 0,
+        "type": "integer",
+        "description": "Specifies the maximum percentage that can be reserved as free space within each compressed page, allowing room to reorganize the data and modification log within the page when a compressed table or index is updated and the data might be recompressed."
+    },
+    "knob26": {
+        "max": 64,
+        "min": 0,
+        "type": "integer",
+        "description": "Controls the sensitivity of linear read-ahead that InnoDB uses to prefetch pages into the buffer pool."
+    },
+    "knob27": {
+        "max": 4294967295,
+        "min": 1,
+        "type": "integer",
+        "description": "Determines the number of threads that can enter InnoDB concurrently."
+    },
+    "knob28": {
+        "max": 16384,
+        "min": 512,
+        "type": "integer",
+        "description": "Defines the write-ahead block size for the redo log, in bytes."
+    },
+    "knob29": {
+        "max": 50,
+        "min": 0,
+        "type": "integer",
+        "description": "Maximum size for the InnoDB change buffer, as a percentage of the total size of the buffer pool."
+    },
+    "knob30": {
+        "max": 20,
+        "min": 0,
+        "type": "integer",
+        "description": "If a query takes longer than this many seconds, the server increments the Slow_queries status variable."
+    },
+    "knob31": {
+        "max": 134217728,
+        "min": 0,
+        "type": "integer",
+        "description": "Do not cache results that are larger than this number of bytes."
+    },
+    "knob32": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum number of simultaneous connections permitted to any given MySQL user account."
+    },
+    "knob33": {
+        "max": 16384,
+        "min": 512,
+        "type": "integer",
+        "description": "The size in bytes of blocks in the key cache."
+    },
+    "knob34": {
+        "max": 10,
+        "min": 1,
+        "type": "integer",
+        "description": "Defines the n-gram token size for the n-gram full-text parser."
+    },
+    "knob35": {
+        "max": 1000,
+        "min": 1,
+        "type": "integer",
+        "description": "The increment size (in megabytes) for extending the size of an auto-extending InnoDB system tablespace file when it becomes full."
+    },
+    "knob36": {
+        "max": 67108864,
+        "min": 65536,
+        "type": "integer",
+        "description": "This variable defines: For related information, see Section 14."
+    },
+    "knob37": {
+        "max": 1073741824,
+        "min": 128,
+        "type": "integer",
+        "description": "The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans."
+    },
+    "knob38": {
+        "max": 65536,
+        "min": 0,
+        "type": "integer",
+        "description": "The MySQL server maintains an in-memory host cache that contains client host name and IP address information and is used to avoid Domain Name System (DNS) lookups; see Section5."
+    },
+    "knob39": {
+        "max": 120,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of seconds to wait for a block to be written to a connection before aborting the write."
+    },
+    "knob40": {
+        "enum_values": [
+            "full",
+            "minimal",
+            "noblob"
+        ],
+        "type": "enum",
+        "description": "For MySQL row-based replication, this variable determines how row images are written to the binary log."
+    },
+    "knob41": {
+        "max": 250000,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of open tables for all threads."
+    },
+    "knob42": {
+        "max": 1000000,
+        "min": 0,
+        "type": "integer",
+        "description": "Permits InnoDB to automatically adjust the value of innodb_thread_sleep_delay up or down according to the current workload."
+    },
+    "knob43": {
+        "max": 1600000000,
+        "min": 32000000,
+        "type": "integer",
+        "description": "The total memory allocated, in bytes, for the InnoDB full-text search index cache for all tables."
+    },
+    "knob44": {
+        "max": 2147479552,
+        "min": 8192,
+        "type": "integer",
+        "description": "Each thread that does a sequential scan for a MyISAM table allocates a buffer of this size (in bytes) for each table it scans."
+    },
+    "knob45": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "This variable indicates the number of equality ranges in an equality comparison condition when the optimizer should switch from using index dives to index statistics in estimating the number of qualifying rows."
+    },
+    "knob46": {
+        "max": 2700,
+        "min": 1,
+        "type": "integer",
+        "description": "Write and flush the logs every N seconds."
+    },
+    "knob47": {
+        "max": 30000,
+        "min": 100,
+        "type": "integer",
+        "description": "This value controls the demotion of buffers from the hot sublist of a key cache to the warm sublist."
+    },
+    "knob48": {
+        "max": 65536,
+        "min": 4096,
+        "type": "integer",
+        "description": "The size in bytes of blocks that are allocated when doing range optimization."
+    },
+    "knob49": {
+        "max": 16,
+        "min": 1,
+        "type": "integer",
+        "description": "Number of threads used in parallel to index and tokenize text in an InnoDB FULLTEXT index when building a search index."
+    },
+    "knob50": {
+        "max": 16,
+        "min": 0,
+        "type": "integer",
+        "description": "Minimum length of words that are stored in an InnoDB FULLTEXT index."
+    },
+    "knob51": {
+        "max": 64,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of I/O threads for read operations in InnoDB."
+    },
+    "knob52": {
+        "max": 1073741824,
+        "min": 4096,
+        "type": "integer",
+        "description": "If a write to the binary log causes the current log file size to exceed the value of this variable, the server rotates the binary logs (closes the current file and opens the next one)."
+    },
+    "knob53": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "If autocommit = 0 , InnoDB honors LOCK TABLES ; MySQL does not return from LOCK TABLES ."
+    },
+    "knob54": {
+        "max": 4294967295,
+        "min": 1000000,
+        "type": "integer",
+        "description": "The InnoDB full-text search query result cache limit (defined in bytes) per full-text search query or per thread."
+    },
+    "knob55": {
+        "max": 128,
+        "min": 1,
+        "type": "integer",
+        "description": "Defines the frequency with which the purge system frees rollback segments in terms of the number of times that purge is invoked."
+    },
+    "knob56": {
+        "max": 18446744073709500416,
+        "min": 4096,
+        "type": "integer",
+        "description": "If nontransactional statements within a transaction require more than this many bytes of memory, the server generates an error."
+    },
+    "knob57": {
+        "max": 524288,
+        "min": 400,
+        "type": "integer",
+        "description": "The number of table definitions (from ."
+    },
+    "knob58": {
+        "max": 1000000,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines how long InnoDB threads sleep before joining the InnoDB queue, in microseconds."
+    },
+    "knob59": {
+        "max": 70,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines the low water mark representing percentage of redo log capacity at which adaptive flushing is enabled."
+    },
+    "knob60": {
+        "max": 18446744073709551615,
+        "min": 1,
+        "type": "integer",
+        "description": "After this many write locks, permit some pending read lock requests to be processed in between."
+    },
+    "knob61": {
+        "max": 40000,
+        "min": 100,
+        "type": "integer",
+        "description": "If flushing activity falls behind, InnoDB can flush more aggressively, at a higher rate of I/O operations per second (IOPS) than defined by the innodb_io_capacity variable."
+    },
+    "knob62": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines the desired maximum purge lag."
+    },
+    "knob63": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "Controls how often the MySQL server synchronizes the binary log to disk."
+    },
+    "knob64": {
+        "max": 62,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum depth of search performed by the query optimizer."
+    },
+    "knob65": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Controls whether the server tracks when the default schema (database) is set within the current session and notifies the client to make the schema name available."
+    },
+    "knob66": {
+        "max": 131072,
+        "min": 1024,
+        "type": "integer",
+        "description": "There is a per-transaction memory pool from which various transaction-related allocations take memory."
+    },
+    "knob67": {
+        "max": 16384,
+        "min": 0,
+        "type": "integer",
+        "description": "How many threads the server should cache for reuse."
+    },
+    "knob68": {
+        "max": 2147483648,
+        "min": 0,
+        "type": "integer",
+        "description": "The amount of memory allocated for caching query results."
+    },
+    "knob69": {
+        "max": 10,
+        "min": 0,
+        "type": "integer",
+        "description": "If this is set to a nonzero value, all tables are closed every flush_time seconds to free up resources and synchronize unflushed data to disk."
+    },
+    "knob70": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "If set to 1, all INSERT, UPDATE, DELETE, and LOCK TABLE WRITE statements wait until there is no pending SELECT or LOCK TABLE READ on the affected table."
+    },
+    "knob71": {
+        "max": 1000,
+        "min": 0,
+        "type": "integer",
+        "description": "The number of top matches to use for full-text searches performed using WITH QUERY EXPANSION."
+    },
+    "knob72": {
+        "max": 65535,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum number of error, warning, and information messages to be stored for display by the SHOW ERRORS and SHOW WARNINGS statements."
+    },
+    "knob73": {
+        "max": 100000,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay."
+    },
+    "knob74": {
+        "max": 18446744073709551615,
+        "min": 1,
+        "type": "integer",
+        "description": "Do not permit statements that probably need to examine more than max_join_size rows (for single-table statements) or row combinations (for multiple-table statements) or that are likely to do more than max_join_size disk seeks."
+    },
+    "knob75": {
+        "max": 1073741824,
+        "min": 4194304,
+        "type": "integer",
+        "description": "The size in bytes of each log file in a log group."
+    },
+    "knob76": {
+        "max": 7,
+        "min": 0,
+        "type": "integer",
+        "description": "The default mode value to use for the WEEK() function."
+    },
+    "knob77": {
+        "enum_values": [
+            "OFF",
+            "STATE",
+            "CHARACTERISTICS"
+        ],
+        "type": "enum",
+        "description": "Controls whether the server tracks the state and characteristics of transactions within the current session and notifies the client to make this information available."
+    },
+    "knob78": {
+        "max": 655350,
+        "min": 0,
+        "type": "integer",
+        "description": "The number of file descriptors available to mysqld from the operating system: The effective open_files_limit value is based on the value specified at system startup (if any) and the values of max_connections and table_open_cache, using these formulas: The server attempts to obtain the number of file descriptors using the maximum of those values."
+    },
+    "knob79": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "If ON, the server flushes (synchronizes) all changes to disk after each SQL statement."
+    },
+    "knob80": {
+        "enum_values": [
+            "0",
+            "1",
+            "2"
+        ],
+        "type": "enum",
+        "description": "Specifies whether flushing a page from the InnoDB buffer pool also flushes other dirty pages in the same extent."
+    },
+    "knob81": {
+        "enum_values": [
+            "NEVER",
+            "AUTO",
+            "ALWAYS"
+        ],
+        "type": "enum",
+        "description": "If AUTO (the default), MySQL permits INSERT and SELECT statements to run concurrently for MyISAM tables that have no free blocks in the middle of the data file."
+    },
+    "knob82": {
+        "max": 100,
+        "min": 10,
+        "type": "integer",
+        "description": "InnoDB performs a bulk load when creating or rebuilding indexes."
+    },
+    "knob83": {
+        "max": 65535,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of outstanding connection requests MySQL can have."
+    },
+    "knob84": {
+        "max": 60,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of seconds to wait for more data from a connection before aborting the read."
+    },
+    "knob85": {
+        "max": 9,
+        "min": 0,
+        "type": "integer",
+        "description": "Specifies the level of zlib compression to use for InnoDB compressed tables and indexes."
+    },
+    "knob86": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Due to concurrency issues, a replica can become inconsistent when a transaction contains updates to both transactional and nontransactional tables."
+    },
+    "knob87": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Controls whether the server tracks changes to the state of the current session and notifies the client when state changes occur."
+    },
+    "knob88": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "When this variable has a value of 1 (the default), the server automatically grants the EXECUTE and ALTER ROUTINE privileges to the creator of a stored routine, if the user cannot already execute and alter or drop the routine."
+    },
+    "knob89": {
+        "max": 131072,
+        "min": 1024,
+        "type": "integer",
+        "description": "The amount in bytes by which to increase a per-transaction memory pool which needs memory."
+    },
+    "knob90": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "Non-zero values protect against the buffer pool being filled by data that is referenced only for a brief period, such as during a full table scan."
+    },
+    "knob91": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "The INFORMATION_SCHEMA has tables that contain system and status variable information (see Section24."
+    },
+    "knob92": {
+        "max": 10000,
+        "min": 0,
+        "type": "integer",
+        "description": "The replication thread delay in milliseconds on a replica server if innodb_thread_concurrency is reached."
+    },
+    "knob93": {
+        "max": 8388608,
+        "min": 4,
+        "type": "integer",
+        "description": "The number of bytes to use when sorting data values."
+    },
+    "knob94": {
+        "max": 8,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of page cleaner threads that flush dirty pages from buffer pool instances."
+    },
+    "knob95": {
+        "max": 30000,
+        "min": 0,
+        "type": "integer",
+        "description": "The number of times a thread waits for an InnoDB mutex to be freed before the thread is suspended."
+    },
+    "knob96": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns."
+    },
+    "knob97": {
+        "max": 8,
+        "min": 1,
+        "type": "integer",
+        "description": "The minimum length of the word to be included in a MyISAM FULLTEXT index."
+    },
+    "knob98": {
+        "max": 524288,
+        "min": 16,
+        "type": "integer",
+        "description": "Sets a soft upper limit for the number of cached stored routines per connection."
+    },
+    "knob99": {
+        "max": 31536000,
+        "min": 2,
+        "type": "integer",
+        "description": "The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake."
+    },
+    "knob100": {
+        "max": 512,
+        "min": 1,
+        "type": "integer",
+        "description": "Partitions the adaptive hash index search system."
+    }
+}

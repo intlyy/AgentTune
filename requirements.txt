@@ -1,0 +1,8 @@
+Flask==3.1.0
+numpy==2.2.5
+openai==1.76.0
+pandas==2.2.3
+paramiko==3.5.1
+psqlparse==1.0rc7
+pymysql==1.1.1
+Requests==2.32.3

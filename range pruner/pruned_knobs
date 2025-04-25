@@ -1,0 +1,64 @@
+{
+  "knob27": {
+    "min_value": 5000,
+    "max_value": 10000,
+    "step": 1000,
+    "description": "Determines the number of threads that can enter InnoDB concurrently. A thread is placed in a queue when it tries to enter InnoDB if the number of threads has already reached the concurrency limit. When a thread is permitted to enter InnoDB, it is given a number of \u201c tickets\u201d equal to the value of innodb_concurrency_tickets , and the thread can enter and leave InnoDB freely until it has used up its tickets. After that point, the thread again becomes subject to the concurrency check (and possible queuing) the next time it tries to enter InnoDB. The default value is 5000. With a small innodb_concurrency_tickets value, small transactions that only need to process a few rows compete fairly with larger transactions that process many rows. The disadvantage of a small innodb_concurrency_tickets value is that large transactions must loop through the queue many times before they can complete, which extends the amount of time required to complete their task. With a large innodb_concurrency_tickets value, large transactions spend less time waiting for a position at the end of the queue (controlled by innodb_thread_concurrency ) and more time retrieving rows. Large transactions also require fewer trips through the queue to complete their task. The disadvantage of a large innodb_concurrency_tickets value is that too many large transactions running at the same time can starve smaller transactions by making them wait a longer time before executing. With a nonzero innodb_thread_concurrency value, you may need to adjust the innodb_concurrency_tickets value up or down to find the optimal balance between larger and smaller transactions. The SHOW ENGINE INNODB STATUS report shows the number of tickets remaining for an executing transaction in its current pass through the queue. This data may also be obtained from the TRX_CONCURRENCY_TICKETS column of the Information Schema INNODB_TRX table. For more information, see Section 14.8.5, \u201cConfiguring Thread Concurrency for InnoDB\u201d."
+  },
+  "knob42": {
+    "min_value": 1000,
+    "max_value": 10000,
+    "step": 1000,
+    "description": "Permits InnoDB to automatically adjust the value of innodb_thread_sleep_delay up or down according to the current workload. Any nonzero value enables automated, dynamic adjustment of the innodb_thread_sleep_delay value, up to the maximum value specified in the innodb_adaptive_max_sleep_delay option. The value represents the number of microseconds. This option can be useful in busy systems, with greater than 16 InnoDB threads. (In practice, it is most valuable for MySQL systems with hundreds or thousands of simultaneous connections.) For more information, see Section 14.8.5, \u201cConfiguring Thread Concurrency for InnoDB\u201d.",
+    "special_value": 0
+  },
+  "knob68": {
+    "min_value": 1048576,
+    "max_value": 5242880,
+    "step": 1048576,
+    "description": "The amount of memory allocated for caching query results. By default, the query cache is disabled. This is achieved using a default value of 1M, with a default for query_cache_type of 0. (To reduce overhead significantly if you set the size to 0, you should also start the server with query_cache_type=0. The permissible values are multiples of 1024; other values are rounded down to the nearest multiple. For nonzero values of query_cache_size, that many bytes of memory are allocated even if query_cache_type=0. See Section8.10.3.3, \u201cQuery Cache Configuration\u201d, for more information. The query cache needs a minimum size of about 40KB to allocate its structures. (The exact size depends on system architecture.) If you set the value of query_cache_size too small, a warning occurs, as described in Section8.10.3.3, \u201cQuery Cache Configuration\u201d.",
+    "special_value": 0
+  },
+  "knob6": {
+    "min_value": 2097152,
+    "max_value": 4194304,
+    "step": 1048576,
+    "description": "Each session that must perform a sort allocates a buffer of this size. sort_buffer_size is not specific to any storage engine and applies in a general manner for optimization. At minimum the sort_buffer_size value must be large enough to accommodate fifteen tuples in the sort buffer. Also, increasing the value of max_sort_length may require increasing the value of sort_buffer_size. For more information, see Section8.2.1.14, \u201cORDER BY Optimization\u201d If you see many Sort_merge_passes per second in SHOW GLOBAL STATUS output, you can consider increasing the sort_buffer_size value to speed up ORDER BY or GROUP BY operations that cannot be improved with query optimization or improved indexing. The optimizer tries to work out how much space is needed but can allocate more, up to the limit. Setting it larger than required globally slows down most queries that sort. It is best to increase it as a session setting, and only for the sessions that need a larger size. On Linux, there are thresholds of 256KB and 2MB where larger values may significantly slow down memory allocation, so you should consider staying below one of those values. Experiment to find the best value for your workload. See SectionB.3.3.5, \u201cWhere MySQL Stores Temporary Files\u201d. The maximum permissible setting for sort_buffer_size is 4GB\u22121. Larger values are permitted for 64-bit platforms (except 64-bit Windows, for which large values are truncated to 4GB\u22121 with a warning)."
+  },
+  "knob43": {
+    "min_value": 32000000,
+    "max_value": 64000000,
+    "step": 16000000,
+    "description": "The total memory allocated, in bytes, for the InnoDB full-text search index cache for all tables. Creating numerous tables, each with a FULLTEXT search index, could consume a significant portion of available memory. innodb_ft_total_cache_size defines a global memory limit for all full-text search indexes to help avoid excessive memory consumption. If the global limit is reached by an index operation, a forced sync is triggered. For more information, see InnoDB Full-Text Index Cache."
+  },
+  "knob20": {
+    "min_value": 70,
+    "max_value": 80,
+    "step": 5,
+    "description": "InnoDB tries to flush data from the buffer pool so that the percentage of dirty pages does not exceed this value. The default value is 75. The innodb_max_dirty_pages_pct setting establishes a target for flushing activity. It does not affect the rate of flushing. For information about managing the rate of flushing, see Section 14.8.3.5, \u201cConfiguring Buffer Pool Flushing\u201d. For related information, see Section 14.8.3.5, \u201cConfiguring Buffer Pool Flushing\u201d. For general I/O tuning advice, see Section 8.5.8, \u201cOptimizing InnoDB Disk I/O\u201d."
+  },
+  "knob52": {
+    "min_value": 134217728,
+    "max_value": 536870912,
+    "step": 134217728,
+    "description": "If a write to the binary log causes the current log file size to exceed the value of this variable, the server rotates the binary logs (closes the current file and opens the next one). The minimum value is 4096 bytes. The maximum and default value is 1GB.A transaction is written in one chunk to the binary log, so it is never split between several binary logs. Therefore, if you have big transactions, you might see binary log files larger than max_binlog_size.If max_relay_log_size is 0, the value of max_binlog_size applies to relay logs as well."
+  },
+  "knob93": {
+    "min_value": 1024,
+    "max_value": 4096,
+    "step": 1024,
+    "description": "The number of bytes to use when sorting data values. The server uses only the first max_sort_length bytes of each value and ignores the rest. Consequently, values that differ only after the first max_sort_length bytes compare as equal for GROUP BY, ORDER BY, and DISTINCT operations. Increasing the value of max_sort_length may require increasing the value of sort_buffer_size as well. For details, see Section8.2.1.14, \u201cORDER BY Optimization\u201d"
+  },
+  "knob19": {
+    "min_value": 100,
+    "max_value": 300,
+    "step": 50,
+    "description": "A parameter that influences the algorithms and heuristics for the flush operation for the InnoDB buffer pool. Primarily of interest to performance experts tuning I/O-intensive workloads. It specifies, per buffer pool instance, how far down the buffer pool LRU page list the page cleaner thread scans looking for dirty pages to flush. This is a background operation performed once per second. A setting smaller than the default is generally suitable for most workloads. A value that is much higher than necessary may impact performance. Only consider increasing the value if you have spare I/O capacity under a typical workload. Conversely, if a write-intensive workload saturates your I/O capacity, decrease the value, especially in the case of a large buffer pool. When tuning innodb_lru_scan_depth , start with a low value and configure the setting upward with the goal of rarely seeing zero free pages. Also, consider adjusting innodb_lru_scan_depth when changing the number of buffer pool instances, since innodb_lru_scan_depth * innodb_buffer_pool_instances defines the amount of work performed by the page cleaner thread each second. For related information, see Section 14.8.3.5, \u201cConfiguring Buffer Pool Flushing\u201d. For general I/O tuning advice, see Section 8.5.8, \u201cOptimizing InnoDB Disk I/O\u201d."
+  },
+  "knob21": {
+    "min_value": 4,
+    "max_value": 8,
+    "step": 1,
+    "description": "The number of I/O threads for write operations in InnoDB. The default value is 4. Its counterpart for read threads is innodb_read_io_threads . For more information, see Section 14.8.6, \u201cConfiguring the Number of Background InnoDB I/O Threads\u201d. For general I/O tuning advice, see Section 8.5.8, \u201cOptimizing InnoDB Disk I/O\u201d. Also take into consideration the value of sync_binlog , which controls synchronization of the binary log to disk. For general I/O tuning advice, see Section 8.5.8, \u201cOptimizing InnoDB Disk I/O\u201d."
+  }
+}

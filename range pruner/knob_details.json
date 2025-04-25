@@ -1,0 +1,647 @@
+{
+    "tmp_table_size": {
+        "max": 1073741824,
+        "min": 1024,
+        "type": "integer",
+        "description": "The maximum size of internal in-memory temporary tables. This variable does not apply to user-created MEMORY tables. The actual limit is the smaller of tmp_table_size and max_heap_table_size. When an in-memory temporary table exceeds the limit, MySQL automatically converts it to an on-disk temporary table. The internal_tmp_disk_storage_engine option defines the storage engine used for on-disk temporary tables. Increase the value of tmp_table_size (and max_heap_table_size if necessary) if you do many advanced GROUP BY queries and you have lots of memory. You can compare the number of internal on-disk temporary tables created to the total number of internal temporary tables created by comparing Created_tmp_disk_tables and Created_tmp_tables values. See also Section8.4.4, “Internal Temporary Table Use in MySQL”."
+    },
+    "max_heap_table_size": {
+        "max": 1073741824,
+        "min": 16384,
+        "type": "integer",
+        "description": "This variable sets the maximum size to which user-created MEMORY tables are permitted to grow. The value of the variable is used to calculate MEMORY table MAX_ROWS values. Setting this variable has no effect on any existing MEMORY table, unless the table is re-created with a statement such as CREATE TABLE or altered with ALTER TABLE or TRUNCATE TABLE. A server restart also sets the maximum size of existing MEMORY tables to the global max_heap_table_size value. This variable is also used in conjunction with tmp_table_size to limit the size of internal in-memory tables. See Section8.4.4, “Internal Temporary Table Use in MySQL”. max_heap_table_size is not replicated. See Section16.4.1.20, “Replication and MEMORY Tables”, and Section16.4.1.37, “Replication and Variables”, for more information."
+    },
+    "query_prealloc_size": {
+        "max": 134217728,
+        "min": 8192,
+        "type": "integer",
+        "description": "The size in bytes of the persistent buffer used for statement parsing and execution. This buffer is not freed between statements. If you are running complex queries, a larger query_prealloc_size value might be helpful in improving performance, because it can reduce the need for the server to perform memory allocation during query execution operations. You should be aware that doing this does not necessarily eliminate allocation completely; the server may still allocate memory in some situations, such as for operations relating to transactions, or to stored programs."
+    },
+    "innodb_thread_concurrency": {
+        "max": 1000,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines the maximum number of threads permitted inside of InnoDB. A value of 0 (the default) is interpreted as infinite concurrency (no limit). This variable is intended for performance tuning on high concurrency systems. InnoDB tries to keep the number of threads inside InnoDB less than or equal to the innodb_thread_concurrency limit. Threads waiting for locks are not counted in the number of concurrently executing threads. The correct setting depends on workload and computing environment. Consider setting this variable if your MySQL instance shares CPU resources with other applications or if your workload or number of concurrent users is growing. Test a range of values to determine the setting that provides the best performance. innodb_thread_concurrency is a dynamic variable, which permits experimenting with different settings on a live test system. If a particular setting performs poorly, you can quickly set innodb_thread_concurrency back to 0. Use the following guidelines to help find and maintain an appropriate setting: A value of 0 disables the queries inside InnoDB and queries in queue counters in the ROW OPERATIONS section of SHOW ENGINE INNODB STATUS output. For related information, see Section 14.8.5, “Configuring Thread Concurrency for InnoDB”."
+    },
+    "innodb_doublewrite": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "When enabled (the default), InnoDB stores all data twice, first to the doublewrite buffer, then to the actual data files. This variable can be turned off with --skip-innodb-doublewrite for benchmarks or cases when top performance is needed rather than concern for data integrity or possible failures. If system tablespace data files ( ibdata* files) are located on Fusion-io devices that support atomic writes, doublewrite buffering is automatically disabled and Fusion-io atomic writes are used for all data files. Because the doublewrite buffer setting is global, doublewrite buffering is also disabled for data files residing on non-Fusion-io hardware. This feature is only supported on Fusion-io hardware and only enabled for Fusion-io NVMFS on Linux. To take full advantage of this feature, an innodb_flush_method setting of O_DIRECT is recommended. For related information, see Section 14.6.5, “Doublewrite Buffer”."
+    },
+    "sort_buffer_size": {
+        "max": 134217728,
+        "min": 32768,
+        "type": "integer",
+        "description": "Each session that must perform a sort allocates a buffer of this size. sort_buffer_size is not specific to any storage engine and applies in a general manner for optimization. At minimum the sort_buffer_size value must be large enough to accommodate fifteen tuples in the sort buffer. Also, increasing the value of max_sort_length may require increasing the value of sort_buffer_size. For more information, see Section8.2.1.14, “ORDER BY Optimization” If you see many Sort_merge_passes per second in SHOW GLOBAL STATUS output, you can consider increasing the sort_buffer_size value to speed up ORDER BY or GROUP BY operations that cannot be improved with query optimization or improved indexing. The optimizer tries to work out how much space is needed but can allocate more, up to the limit. Setting it larger than required globally slows down most queries that sort. It is best to increase it as a session setting, and only for the sessions that need a larger size. On Linux, there are thresholds of 256KB and 2MB where larger values may significantly slow down memory allocation, so you should consider staying below one of those values. Experiment to find the best value for your workload. See SectionB.3.3.5, “Where MySQL Stores Temporary Files”. The maximum permissible setting for sort_buffer_size is 4GB−1. Larger values are permitted for 64-bit platforms (except 64-bit Windows, for which large values are truncated to 4GB−1 with a warning)."
+    },
+    "log_output": {
+        "enum_values": [
+            "TABLE",
+            "FILE",
+            "NONE"
+        ],
+        "type": "enum",
+        "description": "The destination or destinations for general query log and slow query log output. The value is a list one or more comma-separated words chosen from TABLE, FILE, and NONE. TABLE selects logging to the general_log and slow_log tables in the mysql system database. FILE selects logging to log files. NONE disables logging. If NONE is present in the value, it takes precedence over any other words that are present. TABLE and FILE can both be given to select both log output destinations. This variable selects log output destinations, but does not enable log output. To do that, enable the general_log and slow_query_log system variables. For FILE logging, the general_log_file and slow_query_log_file system variables determine the log file locations. For more information, see Section5.4.1, “Selecting General Query Log and Slow Query Log Output Destinations”."
+    },
+    "general_log": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Whether the general query log is enabled. The value can be 0 (or OFF) to disable the log or 1 (or ON) to enable the log. The destination for log output is controlled by the log_output system variable; if that value is NONE, no log entries are written even if the log is enabled."
+    },
+    "innodb_random_read_ahead": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Enables the random read-ahead technique for optimizing InnoDB I/O. For details about performance considerations for different types of read-ahead requests, see Section 14.8.3.4, “Configuring InnoDB Buffer Pool Prefetching (Read-Ahead)”. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”."
+    },
+    "innodb_buffer_pool_size": {
+        "max": 15618062894,
+        "min": 10307921510,
+        "type": "integer",
+        "description": "The size in bytes of the buffer pool, the memory area where InnoDB caches table and index data. The default value is 134217728 bytes (128MB). The maximum value depends on the CPU architecture; the maximum is 4294967295 (232-1) on 32-bit systems and 18446744073709551615 (264-1) on 64-bit systems. On 32-bit systems, the CPU architecture and operating system may impose a lower practical maximum size than the stated maximum. When the size of the buffer pool is greater than 1GB, setting innodb_buffer_pool_instances to a value greater than 1 can improve the scalability on a busy server. A larger buffer pool requires less disk I/O to access the same table data more than once. On a dedicated database server, you might set the buffer pool size to 80% of the machine's physical memory size. Be aware of the following potential issues when configuring buffer pool size, and be prepared to scale back the size of the buffer pool if necessary. When you increase or decrease buffer pool size, the operation is performed in chunks. Chunk size is defined by the innodb_buffer_pool_chunk_size variable, which has a default of 128 MB. Buffer pool size must always be equal to or a multiple of innodb_buffer_pool_chunk_size * innodb_buffer_pool_instances . If you alter the buffer pool size to a value that is not equal to or a multiple of innodb_buffer_pool_chunk_size * innodb_buffer_pool_instances , buffer pool size is automatically adjusted to a value that is equal to or a multiple of innodb_buffer_pool_chunk_size * innodb_buffer_pool_instances . innodb_buffer_pool_size can be set dynamically, which allows you to resize the buffer pool without restarting the server. The Innodb_buffer_pool_resize_status status variable reports the status of online buffer pool resizing operations. See Section 14.8.3.1, “Configuring InnoDB Buffer Pool Size” for more information."
+    },
+    "innodb_max_dirty_pages_pct_lwm": {
+        "max": 99,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines a low water mark representing the percentage of dirty pages at which preflushing is enabled to control the dirty page ratio. The default of 0 disables the pre-flushing behavior entirely. The configured value should always be lower than the innodb_max_dirty_pages_pct value. For more information, see Section 14.8.3.5, “Configuring Buffer Pool Flushing”."
+    },
+    "innodb_purge_threads": {
+        "max": 32,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of background threads devoted to the InnoDB purge operation. Increasing the value creates additional purge threads, which can improve efficiency on systems where DML operations are performed on multiple tables. For related information, see Section 14.8.10, “Purge Configuration”."
+    },
+    "table_open_cache_instances": {
+        "max": 64,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of open tables cache instances. To improve scalability by reducing contention among sessions, the open tables cache can be partitioned into several smaller cache instances of size table_open_cache / table_open_cache_instances . A session needs to lock only one instance to access it for DML statements. This segments cache access among instances, permitting higher performance for operations that use the cache when there are many sessions accessing tables. (DDL statements still require a lock on the entire cache, but such statements are much less frequent than DML statements.) A value of 8 or 16 is recommended on systems that routinely use 16 or more cores. However, if you have many large triggers on your tables that cause a high memory load, the default setting for table_open_cache_instances might lead to excessive memory usage. In that situation, it can be helpful to set table_open_cache_instances to 1 in order to restrict memory usage."
+    },
+    "innodb_compression_failure_threshold_pct": {
+        "max": 100,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines the compression failure rate threshold for a table, as a percentage, at which point MySQL begins adding padding within compressed pages to avoid expensive compression failures. When this threshold is passed, MySQL begins to leave additional free space within each new compressed page, dynamically adjusting the amount of free space up to the percentage of page size specified by innodb_compression_pad_pct_max . A value of zero disables the mechanism that monitors compression efficiency and dynamically adjusts the padding amount. For more information, see Section 14.9.1.6, “Compression for OLTP Workloads”."
+    },
+    "innodb_change_buffering": {
+        "enum_values": [
+            "none",
+            "inserts",
+            "deletes",
+            "changes",
+            "purges",
+            "all"
+        ],
+        "type": "enum",
+        "description": "Whether InnoDB performs change buffering, an optimization that delays write operations to secondary indexes so that the I/O operations can be performed sequentially. Permitted values are described in the following table. For more information, see Section 14.5.2, “Change Buffer”. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”."
+    },
+    "innodb_online_alter_log_max_size": {
+        "max": 18446700000000000000,
+        "min": 65536,
+        "type": "integer",
+        "description": "Specifies an upper limit in bytes on the size of the temporary log files used during online DDL operations for InnoDB tables. There is one such log file for each index being created or table being altered. This log file stores data inserted, updated, or deleted in the table during the DDL operation. The temporary log file is extended when needed by the value of innodb_sort_buffer_size , up to the maximum specified by innodb_online_alter_log_max_size . If a temporary log file exceeds the upper size limit, the ALTER TABLE operation fails and all uncommitted concurrent DML operations are rolled back. Thus, a large value for this option allows more DML to happen during an online DDL operation, but also extends the period of time at the end of the DDL operation when the table is locked to apply the data from the log."
+    },
+    "innodb_purge_batch_size": {
+        "max": 5000,
+        "min": 1,
+        "type": "integer",
+        "description": "Defines the number of undo log pages that purge parses and processes in one batch from the history list. In a multithreaded purge configuration, the coordinator purge thread divides innodb_purge_batch_size by innodb_purge_threads and assigns that number of pages to each purge thread. The innodb_purge_batch_size variable also defines the number of undo log pages that purge frees after every 128 iterations through the undo logs. The innodb_purge_batch_size option is intended for advanced performance tuning in combination with the innodb_purge_threads setting. Most users need not change innodb_purge_batch_size from its default value. For related information, see Section 14.8.10, “Purge Configuration”."
+    },
+    "expire_logs_days": {
+        "max": 99,
+        "min": 0,
+        "type": "integer",
+        "description": "The number of days for automatic binary log file removal. The default is 0, which means “no automatic removal.” Possible removals happen at startup and when the binary log is flushed. Log flushing occurs as indicated in Section 5.4, “MySQL Server Logs”."
+    },
+    "innodb_lru_scan_depth": {
+        "max": 10240,
+        "min": 100,
+        "type": "integer",
+        "description": "A parameter that influences the algorithms and heuristics for the flush operation for the InnoDB buffer pool. Primarily of interest to performance experts tuning I/O-intensive workloads. It specifies, per buffer pool instance, how far down the buffer pool LRU page list the page cleaner thread scans looking for dirty pages to flush. This is a background operation performed once per second. A setting smaller than the default is generally suitable for most workloads. A value that is much higher than necessary may impact performance. Only consider increasing the value if you have spare I/O capacity under a typical workload. Conversely, if a write-intensive workload saturates your I/O capacity, decrease the value, especially in the case of a large buffer pool. When tuning innodb_lru_scan_depth , start with a low value and configure the setting upward with the goal of rarely seeing zero free pages. Also, consider adjusting innodb_lru_scan_depth when changing the number of buffer pool instances, since innodb_lru_scan_depth * innodb_buffer_pool_instances defines the amount of work performed by the page cleaner thread each second. For related information, see Section 14.8.3.5, “Configuring Buffer Pool Flushing”. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”."
+    },
+    "innodb_max_dirty_pages_pct": {
+        "max": 99,
+        "min": 0,
+        "type": "integer",
+        "description": "InnoDB tries to flush data from the buffer pool so that the percentage of dirty pages does not exceed this value. The default value is 75. The innodb_max_dirty_pages_pct setting establishes a target for flushing activity. It does not affect the rate of flushing. For information about managing the rate of flushing, see Section 14.8.3.5, “Configuring Buffer Pool Flushing”. For related information, see Section 14.8.3.5, “Configuring Buffer Pool Flushing”. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”."
+    },
+    "innodb_write_io_threads": {
+        "max": 64,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of I/O threads for write operations in InnoDB. The default value is 4. Its counterpart for read threads is innodb_read_io_threads . For more information, see Section 14.8.6, “Configuring the Number of Background InnoDB I/O Threads”. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”. Also take into consideration the value of sync_binlog , which controls synchronization of the binary log to disk. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”."
+    },
+    "innodb_stats_transient_sample_pages": {
+        "max": 100,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of index pages to sample when estimating cardinality and other statistics for an indexed column, such as those calculated by ANALYZE TABLE . The default value is 8. Increasing the value improves the accuracy of index statistics, which can improve the query execution plan, at the expense of increased I/O when opening an InnoDB table or recalculating statistics. For more information, see Section 14.8.11.2, “Configuring Non-Persistent Optimizer Statistics Parameters”. innodb_stats_transient_sample_pages only applies when innodb_stats_persistent is disabled for a table; when innodb_stats_persistent is enabled, innodb_stats_persistent_sample_pages applies instead. Takes the place of innodb_stats_sample_pages . For more information, see Section 14.8.11.2, “Configuring Non-Persistent Optimizer Statistics Parameters”."
+    },
+    "div_precision_increment": {
+        "max": 30,
+        "min": 0,
+        "type": "integer",
+        "description": "This variable indicates the number of digits by which to increase the scale of the result of division operations performed with the / operator. The default value is 4. The minimum and maximum values are 0 and 30, respectively. The following example illustrates the effect of increasing the default value."
+    },
+    "innodb_spin_wait_delay": {
+        "max": 6000,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum delay between polls for a spin lock. The low-level implementation of this mechanism varies depending on the combination of hardware and operating system, so the delay does not correspond to a fixed time interval. For more information, see Section 14.8.9, “Configuring Spin Lock Polling”."
+    },
+    "innodb_compression_pad_pct_max": {
+        "max": 75,
+        "min": 0,
+        "type": "integer",
+        "description": "Specifies the maximum percentage that can be reserved as free space within each compressed page, allowing room to reorganize the data and modification log within the page when a compressed table or index is updated and the data might be recompressed. Only applies when innodb_compression_failure_threshold_pct is set to a nonzero value, and the rate of compression failures passes the cutoff point. For more information, see Section 14.9.1.6, “Compression for OLTP Workloads”."
+    },
+    "innodb_read_ahead_threshold": {
+        "max": 64,
+        "min": 0,
+        "type": "integer",
+        "description": "Controls the sensitivity of linear read-ahead that InnoDB uses to prefetch pages into the buffer pool. If InnoDB reads at least innodb_read_ahead_threshold pages sequentially from an extent (64 pages), it initiates an asynchronous read for the entire following extent. The permissible range of values is 0 to 64. A value of 0 disables read-ahead. For the default of 56, InnoDB must read at least 56 pages sequentially from an extent to initiate an asynchronous read for the following extent. Knowing how many pages are read through the read-ahead mechanism, and how many of these pages are evicted from the buffer pool without ever being accessed, can be useful when fine-tuning the innodb_read_ahead_threshold setting. SHOW ENGINE INNODB STATUS output displays counter information from the Innodb_buffer_pool_read_ahead and Innodb_buffer_pool_read_ahead_evicted global status variables, which report the number of pages brought into the buffer pool by read-ahead requests, and the number of such pages evicted from the buffer pool without ever being accessed, respectively. The status variables report global values since the last server restart. SHOW ENGINE INNODB STATUS also shows the rate at which the read-ahead pages are read and the rate at which such pages are evicted without being accessed. The per-second averages are based on the statistics collected since the last invocation of SHOW ENGINE INNODB STATUS and are displayed in the BUFFER POOL AND MEMORY section of the SHOW ENGINE INNODB STATUS output. For more information, see Section 14.8.3.4, “Configuring InnoDB Buffer Pool Prefetching (Read-Ahead)”. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”."
+    },
+    "innodb_concurrency_tickets": {
+        "max": 4294967295,
+        "min": 1,
+        "type": "integer",
+        "description": "Determines the number of threads that can enter InnoDB concurrently. A thread is placed in a queue when it tries to enter InnoDB if the number of threads has already reached the concurrency limit. When a thread is permitted to enter InnoDB, it is given a number of “ tickets” equal to the value of innodb_concurrency_tickets , and the thread can enter and leave InnoDB freely until it has used up its tickets. After that point, the thread again becomes subject to the concurrency check (and possible queuing) the next time it tries to enter InnoDB. The default value is 5000. With a small innodb_concurrency_tickets value, small transactions that only need to process a few rows compete fairly with larger transactions that process many rows. The disadvantage of a small innodb_concurrency_tickets value is that large transactions must loop through the queue many times before they can complete, which extends the amount of time required to complete their task. With a large innodb_concurrency_tickets value, large transactions spend less time waiting for a position at the end of the queue (controlled by innodb_thread_concurrency ) and more time retrieving rows. Large transactions also require fewer trips through the queue to complete their task. The disadvantage of a large innodb_concurrency_tickets value is that too many large transactions running at the same time can starve smaller transactions by making them wait a longer time before executing. With a nonzero innodb_thread_concurrency value, you may need to adjust the innodb_concurrency_tickets value up or down to find the optimal balance between larger and smaller transactions. The SHOW ENGINE INNODB STATUS report shows the number of tickets remaining for an executing transaction in its current pass through the queue. This data may also be obtained from the TRX_CONCURRENCY_TICKETS column of the Information Schema INNODB_TRX table. For more information, see Section 14.8.5, “Configuring Thread Concurrency for InnoDB”."
+    },
+    "innodb_log_write_ahead_size": {
+        "max": 16384,
+        "min": 512,
+        "type": "integer",
+        "description": "Defines the write-ahead block size for the redo log, in bytes. To avoid “read-on-write” , set innodb_log_write_ahead_size to match the operating system or file system cache block size. The default setting is 8192 bytes. Read-on-write occurs when redo log blocks are not entirely cached to the operating system or file system due to a mismatch between write-ahead block size for the redo log and operating system or file system cache block size. Valid values for innodb_log_write_ahead_size are multiples of the InnoDB log file block size (2n). The minimum value is the InnoDB log file block size (512). Write-ahead does not occur when the minimum value is specified. The maximum value is equal to the innodb_page_size value. If you specify a value for innodb_log_write_ahead_size that is larger than the innodb_page_size value, the innodb_log_write_ahead_size setting is truncated to the innodb_page_size value. Setting the innodb_log_write_ahead_size value too low in relation to the operating system or file system cache block size results in “read-on-write” . Setting the value too high may have a slight impact on fsync performance for log file writes due to several blocks being written at once. For related information, see Section 8.5.4, “Optimizing InnoDB Redo Logging”."
+    },
+    "innodb_change_buffer_max_size": {
+        "max": 50,
+        "min": 0,
+        "type": "integer",
+        "description": "Maximum size for the InnoDB change buffer, as a percentage of the total size of the buffer pool. You might increase this value for a MySQL server with heavy insert, update, and delete activity, or decrease it for a MySQL server with unchanging data used for reporting. For more information, see Section 14.5.2, “Change Buffer”. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”."
+    },
+    "long_query_time": {
+        "max": 20,
+        "min": 0,
+        "type": "integer",
+        "description": "If a query takes longer than this many seconds, the server increments the Slow_queries status variable. If the slow query log is enabled, the query is logged to the slow query log file. This value is measured in real time, not CPU time, so a query that is under the threshold on a lightly loaded system might be above the threshold on a heavily loaded one. The minimum and default values of long_query_time are 0 and 10, respectively. The maximum is 31536000, which is 365 days in seconds. The value can be specified to a resolution of microseconds. See Section5.4.5, “The Slow Query Log”. Smaller values of this variable result in more statements being considered long-running, with the result that more space is required for the slow query log. For very small values (less than one second), the log may grow quite large in a small time. Increasing the number of statements considered long-running may also result in false positives for the “excessive Number of Long Running Processes” alert in MySQL Enterprise Monitor, especially if Group Replication is enabled. For these reasons, very small values should be used in test environments only, or, in production environments, only for a short period."
+    },
+    "query_cache_limit": {
+        "max": 134217728,
+        "min": 0,
+        "type": "integer",
+        "description": "Do not cache results that are larger than this number of bytes. The default value is 1MB."
+    },
+    "max_user_connections": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum number of simultaneous connections permitted to any given MySQL user account. A value of 0 (the default) means “no limit.” This variable has a global value that can be set at server startup or runtime. It also has a read-only session value that indicates the effective simultaneous-connection limit that applies to the account associated with the current session. The session value is initialized as follows: Account resource limits are specified using the CREATE USER or ALTER USER statement. See Section6.2.16, “Setting Account Resource Limits”."
+    },
+    "key_cache_block_size": {
+        "max": 16384,
+        "min": 512,
+        "type": "integer",
+        "description": "The size in bytes of blocks in the key cache. The default value is 1024. See Section8.10.2, “The MyISAM Key Cache”."
+    },
+    "ngram_token_size": {
+        "max": 10,
+        "min": 1,
+        "type": "integer",
+        "description": "Defines the n-gram token size for the n-gram full-text parser. The ngram_token_size option is read-only and can only be modified at startup. The default value is 2 (bigram). The maximum value is 10. For more information about how to configure this variable, see Section12.9.8, “ngram Full-Text Parser”."
+    },
+    "innodb_autoextend_increment": {
+        "max": 1000,
+        "min": 1,
+        "type": "integer",
+        "description": "The increment size (in megabytes) for extending the size of an auto-extending InnoDB system tablespace file when it becomes full. The default value is 64. For related information, see System Tablespace Data File Configuration, and Resizing the System Tablespace. The innodb_autoextend_increment setting does not affect file-per-table tablespace files or general tablespace files. These files are auto-extending regardless of the innodb_autoextend_increment setting. The initial extensions are by small amounts, after which extensions occur in increments of 4MB."
+    },
+    "innodb_sort_buffer_size": {
+        "max": 67108864,
+        "min": 65536,
+        "type": "integer",
+        "description": "This variable defines: For related information, see Section 14.13.3, “Online DDL Space Requirements”."
+    },
+    "join_buffer_size": {
+        "max": 1073741824,
+        "min": 128,
+        "type": "integer",
+        "description": "The minimum size of the buffer that is used for plain index scans, range index scans, and joins that do not use indexes and thus perform full table scans. Normally, the best way to get fast joins is to add indexes. Increase the value of join_buffer_size to get a faster full join when adding indexes is not possible. One join buffer is allocated for each full join between two tables. For a complex join between several tables for which indexes are not used, multiple join buffers might be necessary. The default is 256KB. The maximum permissible setting for join_buffer_size is 4GB−1. Larger values are permitted for 64-bit platforms (except 64-bit Windows, for which large values are truncated to 4GB−1 with a warning). The block size is 128, and a value that is not an exact multiple of the block size is rounded down to the next lower multiple of the block size by MySQL Server before storing the value for the system variable. The parser allows values up to the maximum unsigned integer value for the platform (4294967295 or 232−1 for a 32-bit system, 18446744073709551615 or 264−1 for a 64-bit system) but the actual maximum is a block size lower. Unless a Block Nested-Loop or Batched Key Access algorithm is used, there is no gain from setting the buffer larger than required to hold each matching row, and all joins allocate at least the minimum size, so use caution in setting this variable to a large value globally. It is better to keep the global setting small and change the session setting to a larger value only in sessions that are doing large joins. Memory allocation time can cause substantial performance drops if the global size is larger than needed by most queries that use it. When Block Nested-Loop is used, a larger join buffer can be beneficial up to the point where all required columns from all rows in the first table are stored in the join buffer. This depends on the query; the optimal size may be smaller than holding all rows from the first tables. When Batched Key Access is used, the value of join_buffer_size defines how large the batch of keys is in each request to the storage engine. The larger the buffer, the more sequential access is made to the right hand table of a join operation, which can significantly improve performance. For additional information about join buffering, see Section8.2.1.6, “Nested-Loop Join Algorithms”. For information about Batched Key Access, see Section8.2.1.11, “Block Nested-Loop and Batched Key Access Joins”."
+    },
+    "host_cache_size": {
+        "max": 65536,
+        "min": 0,
+        "type": "integer",
+        "description": "The MySQL server maintains an in-memory host cache that contains client host name and IP address information and is used to avoid Domain Name System (DNS) lookups; see Section5.1.11.2, “DNS Lookups and the Host Cache”. The host_cache_size variable controls the size of the host cache, as well as the size of the Performance Schema host_cache table that exposes the cache contents. Setting host_cache_size has these effects: The default value is autosized to 128, plus 1 for a value of max_connections up to 500, plus 1 for every increment of 20 over 500 in the max_connections value, capped to a limit of 2000. Using the --skip-host-cache option is similar to setting the host_cache_size system variable to 0, but host_cache_size is more flexible because it can also be used to resize, enable, and disable the host cache at runtime, not just at server startup. Starting the server with --skip-host-cache does not prevent runtime changes to the value of host_cache_size, but such changes have no effect and the cache is not re-enabled even if host_cache_size is set larger than 0. Setting the host_cache_size system variable rather than the --skip-host-cache option is preferred for the reasons given in the previous paragraph. In addition, the --skip-host-cache option is deprecated in MySQL 8.0, and its removal is expected in a future version of MySQL."
+    },
+    "net_write_timeout": {
+        "max": 120,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of seconds to wait for a block to be written to a connection before aborting the write. See also net_read_timeout."
+    },
+    "binlog_row_image": {
+        "enum_values": [
+            "full",
+            "minimal",
+            "noblob"
+        ],
+        "type": "enum",
+        "description": "For MySQL row-based replication, this variable determines how row images are written to the binary log.In MySQL row-based replication, each row change event contains two images, a “before” image whose columns are matched against when searching for the row to be updated, and an “after” image containing the changes. Normally, MySQL logs full rows (that is, all columns) for both the before and after images. However, it is not strictly necessary to include every column in both images, and we can often save disk, memory, and network usage by logging only those columns which are actually required."
+    },
+    "table_open_cache": {
+        "max": 250000,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of open tables for all threads. Increasing this value increases the number of file descriptors that mysqld requires. The effective value of this variable is the greater of the effective value of open_files_limit - 10 - the effective value of max_connections / 2, and 400; that is You can check whether you need to increase the table cache by checking the Opened_tables status variable. If the value of Opened_tables is large and you do not use FLUSH TABLES often (which just forces all tables to be closed and reopened), then you should increase the value of the table_open_cache variable. For more information about the table cache, see Section8.4.3.1, “How MySQL Opens and Closes Tables”."
+    },
+    "innodb_adaptive_max_sleep_delay": {
+        "max": 1000000,
+        "min": 0,
+        "type": "integer",
+        "description": "Permits InnoDB to automatically adjust the value of innodb_thread_sleep_delay up or down according to the current workload. Any nonzero value enables automated, dynamic adjustment of the innodb_thread_sleep_delay value, up to the maximum value specified in the innodb_adaptive_max_sleep_delay option. The value represents the number of microseconds. This option can be useful in busy systems, with greater than 16 InnoDB threads. (In practice, it is most valuable for MySQL systems with hundreds or thousands of simultaneous connections.) For more information, see Section 14.8.5, “Configuring Thread Concurrency for InnoDB”."
+    },
+    "innodb_ft_total_cache_size": {
+        "max": 1600000000,
+        "min": 32000000,
+        "type": "integer",
+        "description": "The total memory allocated, in bytes, for the InnoDB full-text search index cache for all tables. Creating numerous tables, each with a FULLTEXT search index, could consume a significant portion of available memory. innodb_ft_total_cache_size defines a global memory limit for all full-text search indexes to help avoid excessive memory consumption. If the global limit is reached by an index operation, a forced sync is triggered. For more information, see InnoDB Full-Text Index Cache."
+    },
+    "read_buffer_size": {
+        "max": 2147479552,
+        "min": 8192,
+        "type": "integer",
+        "description": "Each thread that does a sequential scan for a MyISAM table allocates a buffer of this size (in bytes) for each table it scans. If you do many sequential scans, you might want to increase this value, which defaults to 131072. The value of this variable should be a multiple of 4KB. If it is set to a value that is not a multiple of 4KB, its value is rounded down to the nearest multiple of 4KB. This option is also used in the following context for all storage engines: read_buffer_size is also used in one other storage engine-specific way: to determine the memory block size for MEMORY tables. For more information about memory use during different operations, see Section8.12.4.1, “How MySQL Uses Memory”."
+    },
+    "eq_range_index_dive_limit": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "This variable indicates the number of equality ranges in an equality comparison condition when the optimizer should switch from using index dives to index statistics in estimating the number of qualifying rows. It applies to evaluation of expressions that have either of these equivalent forms, where the optimizer uses a nonunique index to look up col_name values: In both cases, the expression contains N equality ranges. The optimizer can make row estimates using index dives or index statistics. If eq_range_index_dive_limit is greater than 0, the optimizer uses existing index statistics instead of index dives if there are eq_range_index_dive_limit or more equality ranges. Thus, to permit use of index dives for up to N equality ranges, set eq_range_index_dive_limit to N + 1. To disable use of index statistics and always use index dives regardless of N, set eq_range_index_dive_limit to 0. For more information, see Equality Range Optimization of Many-Valued Comparisons. To update table index statistics for best estimates, use ANALYZE TABLE."
+    },
+    "innodb_flush_log_at_timeout": {
+        "max": 2700,
+        "min": 1,
+        "type": "integer",
+        "description": "Write and flush the logs every N seconds. innodb_flush_log_at_timeout allows the timeout period between flushes to be increased in order to reduce flushing and avoid impacting performance of binary log group commit. The default setting for innodb_flush_log_at_timeout is once per second."
+    },
+    "key_cache_age_threshold": {
+        "max": 30000,
+        "min": 100,
+        "type": "integer",
+        "description": "This value controls the demotion of buffers from the hot sublist of a key cache to the warm sublist. Lower values cause demotion to happen more quickly. The minimum value is 100. The default value is 300. See Section8.10.2, “The MyISAM Key Cache”."
+    },
+    "range_alloc_block_size": {
+        "max": 65536,
+        "min": 4096,
+        "type": "integer",
+        "description": "The size in bytes of blocks that are allocated when doing range optimization. The block size for the byte number is 1024. A value that is not an exact multiple of the block size is rounded down to the next lower multiple of the block size by MySQL Server before storing the value for the system variable. The parser allows values up to the maximum unsigned integer value for the platform (4294967295 or 232−1 for a 32-bit system, 18446744073709551615 or 264−1 for a 64-bit system) but the actual maximum is a block size lower."
+    },
+    "innodb_ft_sort_pll_degree": {
+        "max": 16,
+        "min": 1,
+        "type": "integer",
+        "description": "Number of threads used in parallel to index and tokenize text in an InnoDB FULLTEXT index when building a search index. For related information, see Section 14.6.2.4, “InnoDB Full-Text Indexes”, and innodb_sort_buffer_size ."
+    },
+    "innodb_ft_min_token_size": {
+        "max": 16,
+        "min": 0,
+        "type": "integer",
+        "description": "Minimum length of words that are stored in an InnoDB FULLTEXT index. Increasing this value reduces the size of the index, thus speeding up queries, by omitting common words that are unlikely to be significant in a search context, such as the English words “a” and “to” . For content using a CJK (Chinese, Japanese, Korean) character set, specify a value of 1. For more information, see Section 12.9.6, “Fine-Tuning MySQL Full-Text Search”."
+    },
+    "innodb_read_io_threads": {
+        "max": 64,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of I/O threads for read operations in InnoDB. Its counterpart for write threads is innodb_write_io_threads . For more information, see Section 14.8.6, “Configuring the Number of Background InnoDB I/O Threads”. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”."
+    },
+    "max_binlog_size": {
+        "max": 1073741824,
+        "min": 4096,
+        "type": "integer",
+        "description": "If a write to the binary log causes the current log file size to exceed the value of this variable, the server rotates the binary logs (closes the current file and opens the next one). The minimum value is 4096 bytes. The maximum and default value is 1GB.A transaction is written in one chunk to the binary log, so it is never split between several binary logs. Therefore, if you have big transactions, you might see binary log files larger than max_binlog_size.If max_relay_log_size is 0, the value of max_binlog_size applies to relay logs as well."
+    },
+    "innodb_table_locks": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "If autocommit = 0 , InnoDB honors LOCK TABLES ; MySQL does not return from LOCK TABLES ... WRITE until all other threads have released all their locks to the table. The default value of innodb_table_locks is 1, which means that LOCK TABLES causes InnoDB to lock a table internally if autocommit = 0 . innodb_table_locks = 0 has no effect for tables locked explicitly with LOCK TABLES ... WRITE . It does have an effect for tables locked for read or write by LOCK TABLES ... WRITE implicitly (for example, through triggers) or by LOCK TABLES ... READ . For related information, see Section 14.7, “InnoDB Locking and Transaction Model”."
+    },
+    "innodb_ft_result_cache_limit": {
+        "max": 4294967295,
+        "min": 1000000,
+        "type": "integer",
+        "description": "The InnoDB full-text search query result cache limit (defined in bytes) per full-text search query or per thread. Intermediate and final InnoDB full-text search query results are handled in memory. Use innodb_ft_result_cache_limit to place a size limit on the full-text search query result cache to avoid excessive memory consumption in case of very large InnoDB full-text search query results (millions or hundreds of millions of rows, for example). Memory is allocated as required when a full-text search query is processed. If the result cache size limit is reached, an error is returned indicating that the query exceeds the maximum allowed memory. The maximum value of innodb_ft_result_cache_limit for all platform types and bit sizes is 2**32-1."
+    },
+    "innodb_purge_rseg_truncate_frequency": {
+        "max": 128,
+        "min": 1,
+        "type": "integer",
+        "description": "Defines the frequency with which the purge system frees rollback segments in terms of the number of times that purge is invoked. An undo tablespace cannot be truncated until its rollback segments are freed. Normally, the purge system frees rollback segments once every 128 times that purge is invoked. The default value is 128. Reducing this value increases the frequency with which the purge thread frees rollback segments. innodb_purge_rseg_truncate_frequency is intended for use with innodb_undo_log_truncate . For more information, see Truncating Undo Tablespaces."
+    },
+    "max_binlog_stmt_cache_size": {
+        "max": 18446744073709500416,
+        "min": 4096,
+        "type": "integer",
+        "description": "If nontransactional statements within a transaction require more than this many bytes of memory, the server generates an error. The minimum value is 4096. The maximum and default values are 4GB on 32-bit platforms and 16EB (exabytes) on 64-bit platforms. max_binlog_stmt_cache_size sets the size for the statement cache only; the upper limit for the transaction cache is governed exclusively by the max_binlog_cache_size system variable."
+    },
+    "table_definition_cache": {
+        "max": 524288,
+        "min": 400,
+        "type": "integer",
+        "description": "The number of table definitions (from .frm files) that can be stored in the table definition cache. If you use a large number of tables, you can create a large table definition cache to speed up opening of tables. The table definition cache takes less space and does not use file descriptors, unlike the normal table cache. The minimum value is 400. The default value is based on the following formula, capped to a limit of 2000: For InnoDB, the table_definition_cache setting acts as a soft limit for the number of table instances in the InnoDB data dictionary cache and the number file-per-table tablespaces that can be open at one time. If the number of table instances in the InnoDB data dictionary cache exceeds the table_definition_cache limit, an LRU mechanism begins marking table instances for eviction and eventually removes them from the InnoDB data dictionary cache. The number of open tables with cached metadata can be higher than the table_definition_cache limit due to table instances with foreign key relationships, which are not placed on the LRU list. The number of file-per-table tablespaces that can be open at one time is limited by both the table_definition_cache and innodb_open_files settings. If both variables are set, the highest setting is used. If neither variable is set, the table_definition_cache setting, which has a higher default value, is used. If the number of open tablespaces exceeds the limit defined by table_definition_cache or innodb_open_files, an LRU mechanism searches the LRU list for tablespace files that are fully flushed and not currently being extended. This process is performed each time a new tablespace is opened. Only inactive tablespaces are closed."
+    },
+    "innodb_thread_sleep_delay": {
+        "max": 1000000,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines how long InnoDB threads sleep before joining the InnoDB queue, in microseconds. The default value is 10000. A value of 0 disables sleep. You can set innodb_adaptive_max_sleep_delay to the highest value you would allow for innodb_thread_sleep_delay , and InnoDB automatically adjusts innodb_thread_sleep_delay up or down depending on current thread-scheduling activity. This dynamic adjustment helps the thread scheduling mechanism to work smoothly during times when the system is lightly loaded or when it is operating near full capacity. For more information, see Section 14.8.5, “Configuring Thread Concurrency for InnoDB”."
+    },
+    "innodb_adaptive_flushing_lwm": {
+        "max": 70,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines the low water mark representing percentage of redo log capacity at which adaptive flushing is enabled. For more information, see Section 14.8.3.5, “Configuring Buffer Pool Flushing”."
+    },
+    "max_write_lock_count": {
+        "max": 18446744073709551615,
+        "min": 1,
+        "type": "integer",
+        "description": "After this many write locks, permit some pending read lock requests to be processed in between. Write lock requests have higher priority than read lock requests. However, if max_write_lock_count is set to some low value (say, 10), read lock requests may be preferred over pending write lock requests if the read lock requests have already been passed over in favor of 10 write lock requests. Normally this behavior does not occur because max_write_lock_count by default has a very large value."
+    },
+    "innodb_io_capacity_max": {
+        "max": 40000,
+        "min": 100,
+        "type": "integer",
+        "description": "If flushing activity falls behind, InnoDB can flush more aggressively, at a higher rate of I/O operations per second (IOPS) than defined by the innodb_io_capacity variable. The innodb_io_capacity_max variable defines a maximum number of IOPS performed by InnoDB background tasks in such situations. For information about configuring the innodb_io_capacity_max variable, see Section 14.8.8, “Configuring InnoDB I/O Capacity”."
+    },
+    "innodb_max_purge_lag": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "Defines the desired maximum purge lag. If this value is exceeded, a delay is imposed on INSERT , UPDATE , and DELETE operations to allow time for purge to catch up. The default value is 0, which means there is no maximum purge lag and no delay. For more information, see Section 14.8.10, “Purge Configuration”."
+    },
+    "sync_binlog": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "Controls how often the MySQL server synchronizes the binary log to disk."
+    },
+    "optimizer_search_depth": {
+        "max": 62,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum depth of search performed by the query optimizer. Values larger than the number of relations in a query result in better query plans, but take longer to generate an execution plan for a query. Values smaller than the number of relations in a query return an execution plan quicker, but the resulting plan may be far from being optimal. If set to 0, the system automatically picks a reasonable value."
+    },
+    "session_track_schema": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Controls whether the server tracks when the default schema (database) is set within the current session and notifies the client to make the schema name available. If the schema name tracker is enabled, name notification occurs each time the default schema is set, even if the new schema name is the same as the old. For more information about session state tracking, see Section5.1.15, “Server Tracking of Client Session State”."
+    },
+    "transaction_prealloc_size": {
+        "max": 131072,
+        "min": 1024,
+        "type": "integer",
+        "description": "There is a per-transaction memory pool from which various transaction-related allocations take memory. The initial size of the pool in bytes is transaction_prealloc_size. For every allocation that cannot be satisfied from the pool because it has insufficient memory available, the pool is increased by transaction_alloc_block_size bytes. When the transaction ends, the pool is truncated to transaction_prealloc_size bytes. By making transaction_prealloc_size sufficiently large to contain all statements within a single transaction, you can avoid many malloc() calls."
+    },
+    "thread_cache_size": {
+        "max": 16384,
+        "min": 0,
+        "type": "integer",
+        "description": "How many threads the server should cache for reuse. When a client disconnects, the client's threads are put in the cache if there are fewer than thread_cache_size threads there. Requests for threads are satisfied by reusing threads taken from the cache if possible, and only when the cache is empty is a new thread created. This variable can be increased to improve performance if you have a lot of new connections. Normally, this does not provide a notable performance improvement if you have a good thread implementation. However, if your server sees hundreds of connections per second you should normally set thread_cache_size high enough so that most new connections use cached threads. By examining the difference between the Connections and Threads_created status variables, you can see how efficient the thread cache is. For details, see Section5.1.9, “Server Status Variables”. The default value is based on the following formula, capped to a limit of 100: This variable has no effect for the embedded server (libmysqld) and as of MySQL 5.7.2 is no longer visible within the embedded server."
+    },
+    "query_cache_size": {
+        "max": 2147483648,
+        "min": 0,
+        "type": "integer",
+        "description": "The amount of memory allocated for caching query results. By default, the query cache is disabled. This is achieved using a default value of 1M, with a default for query_cache_type of 0. (To reduce overhead significantly if you set the size to 0, you should also start the server with query_cache_type=0. The permissible values are multiples of 1024; other values are rounded down to the nearest multiple. For nonzero values of query_cache_size, that many bytes of memory are allocated even if query_cache_type=0. See Section8.10.3.3, “Query Cache Configuration”, for more information. The query cache needs a minimum size of about 40KB to allocate its structures. (The exact size depends on system architecture.) If you set the value of query_cache_size too small, a warning occurs, as described in Section8.10.3.3, “Query Cache Configuration”."
+    },
+    "flush_time": {
+        "max": 10,
+        "min": 0,
+        "type": "integer",
+        "description": "If this is set to a nonzero value, all tables are closed every flush_time seconds to free up resources and synchronize unflushed data to disk. This option is best used only on systems with minimal resources."
+    },
+    "low_priority_updates": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "If set to 1, all INSERT, UPDATE, DELETE, and LOCK TABLE WRITE statements wait until there is no pending SELECT or LOCK TABLE READ on the affected table. The same effect can be obtained using {INSERT | REPLACE | DELETE | UPDATE} LOW_PRIORITY ... to lower the priority of only one query. This variable affects only storage engines that use only table-level locking (such as MyISAM, MEMORY, and MERGE). See Section8.11.2, “Table Locking Issues”."
+    },
+    "ft_query_expansion_limit": {
+        "max": 1000,
+        "min": 0,
+        "type": "integer",
+        "description": "The number of top matches to use for full-text searches performed using WITH QUERY EXPANSION."
+    },
+    "max_error_count": {
+        "max": 65535,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum number of error, warning, and information messages to be stored for display by the SHOW ERRORS and SHOW WARNINGS statements. This is the same as the number of condition areas in the diagnostics area, and thus the number of conditions that can be inspected by GET DIAGNOSTICS."
+    },
+    "binlog_group_commit_sync_no_delay_count": {
+        "max": 100000,
+        "min": 0,
+        "type": "integer",
+        "description": "The maximum number of transactions to wait for before aborting the current delay as specified by binlog_group_commit_sync_delay. If binlog_group_commit_sync_delay is set to 0, then this option has no effect."
+    },
+    "max_join_size": {
+        "max": 18446744073709551615,
+        "min": 1,
+        "type": "integer",
+        "description": "Do not permit statements that probably need to examine more than max_join_size rows (for single-table statements) or row combinations (for multiple-table statements) or that are likely to do more than max_join_size disk seeks. By setting this value, you can catch statements where keys are not used properly and that would probably take a long time. Set it if your users tend to perform joins that lack a WHERE clause, that take a long time, or that return millions of rows. For more information, see Using Safe-Updates Mode (--safe-updates). Setting this variable to a value other than DEFAULT resets the value of sql_big_selects to 0. If you set the sql_big_selects value again, the max_join_size variable is ignored. If a query result is in the query cache, no result size check is performed, because the result has previously been computed and it does not burden the server to send it to the client."
+    },
+    "innodb_log_file_size": {
+        "max": 1073741824,
+        "min": 4194304,
+        "type": "integer",
+        "description": "The size in bytes of each log file in a log group. The combined size of log files ( innodb_log_file_size * innodb_log_files_in_group ) cannot exceed a maximum value that is slightly less than 512GB. A pair of 255 GB log files, for example, approaches the limit but does not exceed it. The default value is 48MB. Generally, the combined size of the log files should be large enough that the server can smooth out peaks and troughs in workload activity, which often means that there is enough redo log space to handle more than an hour of write activity. The larger the value, the less checkpoint flush activity is required in the buffer pool, saving disk I/O. Larger log files also make crash recovery slower. The minimum innodb_log_file_size value was increased from 1MB to 4MB in MySQL 5.7.11. For related information, see Redo Log File Configuration. For general I/O tuning advice, see Section 8.5.8, “Optimizing InnoDB Disk I/O”."
+    },
+    "default_week_format": {
+        "max": 7,
+        "min": 0,
+        "type": "integer",
+        "description": "The default mode value to use for the WEEK() function. See Section12.7, “Date and Time Functions”."
+    },
+    "session_track_transaction_info": {
+        "enum_values": [
+            "OFF",
+            "STATE",
+            "CHARACTERISTICS"
+        ],
+        "type": "enum",
+        "description": "Controls whether the server tracks the state and characteristics of transactions within the current session and notifies the client to make this information available. These session_track_transaction_info values are permitted: For a client to safely relocate a transaction to another session, it must track not only transaction state but also transaction characteristics. In addition, the client must track the transaction_isolation and transaction_read_only system variables to correctly determine the session defaults. (To track these variables, list them in the value of the session_track_system_variables system variable.) For more information about session state tracking, see Section5.1.15, “Server Tracking of Client Session State”."
+    },
+    "open_files_limit": {
+        "max": 655350,
+        "min": 0,
+        "type": "integer",
+        "description": "The number of file descriptors available to mysqld from the operating system: The effective open_files_limit value is based on the value specified at system startup (if any) and the values of max_connections and table_open_cache, using these formulas: The server attempts to obtain the number of file descriptors using the maximum of those values. If that many descriptors cannot be obtained, the server attempts to obtain as many as the system permits. The effective value is 0 on systems where MySQL cannot change the number of open files. On Unix, the value cannot be set greater than the value displayed by the ulimit -n command. On Linux systems using systemd, the value cannot be set greater than LimitNOFile (this is DefaultLimitNOFILE, if LimitNOFile is not set); otherwise, on Linux, the value of open_files_limit cannot exceed ulimit -n."
+    },
+    "flush": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "If ON, the server flushes (synchronizes) all changes to disk after each SQL statement. Normally, MySQL does a write of all changes to disk only after each SQL statement and lets the operating system handle the synchronizing to disk. See SectionB.3.3.3, “What to Do If MySQL Keeps Crashing”. This variable is set to ON if you start mysqld with the --flush option."
+    },
+    "innodb_flush_neighbors": {
+        "enum_values": [
+            "0",
+            "1",
+            "2"
+        ],
+        "type": "enum",
+        "description": "Specifies whether flushing a page from the InnoDB buffer pool also flushes other dirty pages in the same extent. When the table data is stored on a traditional HDD storage device, flushing such neighbor pages in one operation reduces I/O overhead (primarily for disk seek operations) compared to flushing individual pages at different times. For table data stored on SSD, seek time is not a significant factor and you can turn this setting off to spread out write operations. For related information, see Section 14.8.3.5, “Configuring Buffer Pool Flushing”."
+    },
+    "concurrent_insert": {
+        "enum_values": [
+            "NEVER",
+            "AUTO",
+            "ALWAYS"
+        ],
+        "type": "enum",
+        "description": "If AUTO (the default), MySQL permits INSERT and SELECT statements to run concurrently for MyISAM tables that have no free blocks in the middle of the data file. This variable can take the values shown in the following table. The variable can be assigned using either the name values or corresponding integer values. If you start mysqld with --skip-new, concurrent_insert is set to NEVER. See also Section8.11.3, “Concurrent Inserts”."
+    },
+    "innodb_fill_factor": {
+        "max": 100,
+        "min": 10,
+        "type": "integer",
+        "description": "InnoDB performs a bulk load when creating or rebuilding indexes. This method of index creation is known as a “sorted index build” . innodb_fill_factor defines the percentage of space on each B-tree page that is filled during a sorted index build, with the remaining space reserved for future index growth. For example, setting innodb_fill_factor to 80 reserves 20 percent of the space on each B-tree page for future index growth. Actual percentages may vary. The innodb_fill_factor setting is interpreted as a hint rather than a hard limit. An innodb_fill_factor setting of 100 leaves 1/16 of the space in clustered index pages free for future index growth. innodb_fill_factor applies to both B-tree leaf and non-leaf pages. It does not apply to external pages used for TEXT or BLOB entries. For more information, see Section 14.6.2.3, “Sorted Index Builds”."
+    },
+    "back_log": {
+        "max": 65535,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of outstanding connection requests MySQL can have. This comes into play when the main MySQL thread gets very many connection requests in a very short time. It then takes some time (although very little) for the main thread to check the connection and start a new thread. The back_log value indicates how many requests can be stacked during this short time before MySQL momentarily stops answering new requests. You need to increase this only if you expect a large number of connections in a short period of time. In other words, this value is the size of the listen queue for incoming TCP/IP connections. Your operating system has its own limit on the size of this queue. The manual page for the Unix listen() system call should have more details. Check your OS documentation for the maximum value for this variable. back_log cannot be set higher than your operating system limit. The default value is based on the following formula, capped to a limit of 900:"
+    },
+    "net_read_timeout": {
+        "max": 60,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of seconds to wait for more data from a connection before aborting the read. When the server is reading from the client, net_read_timeout is the timeout value controlling when to abort. When the server is writing to the client, net_write_timeout is the timeout value controlling when to abort. See also slave_net_timeout."
+    },
+    "innodb_compression_level": {
+        "max": 9,
+        "min": 0,
+        "type": "integer",
+        "description": "Specifies the level of zlib compression to use for InnoDB compressed tables and indexes. A higher value lets you fit more data onto a storage device, at the expense of more CPU overhead during compression. A lower value lets you reduce CPU overhead when storage space is not critical, or you expect the data is not especially compressible. For more information, see Section 14.9.1.6, “Compression for OLTP Workloads”."
+    },
+    "binlog_direct_non_transactional_updates": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Due to concurrency issues, a replica can become inconsistent when a transaction contains updates to both transactional and nontransactional tables. MySQL tries to preserve causality among these statements by writing nontransactional statements to the transaction cache, which is flushed upon commit. However, problems arise when modifications done to nontransactional tables on behalf of a transaction become immediately visible to other connections because these changes may not be written immediately into the binary log.The binlog_direct_non_transactional_updates variable offers one possible workaround to this issue. By default, this variable is disabled. Enabling binlog_direct_non_transactional_updates causes updates to nontransactional tables to be written directly to the binary log, rather than to the transaction cache.binlog_direct_non_transactional_updates works only for statements that are replicated using the statement-based binary logging format; that is, it works only when the value of binlog_format is STATEMENT, or when binlog_format is MIXED and a given statement is being replicated using the statement-based format. This variable has no effect when the binary log format is ROW, or when binlog_format is set to MIXED and a given statement is replicated using the row-based format."
+    },
+    "session_track_state_change": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "Controls whether the server tracks changes to the state of the current session and notifies the client when state changes occur. Changes can be reported for these attributes of client session state: If the session state tracker is enabled, notification occurs for each change that involves tracked session attributes, even if the new attribute values are the same as the old. For example, setting a user-defined variable to its current value results in a notification. The session_track_state_change variable controls only notification of when changes occur, not what the changes are. For example, state-change notifications occur when the default schema is set or tracked session system variables are assigned, but the notification does not include the schema name or variable values. To receive notification of the schema name or session system variable values, use the session_track_schema or session_track_system_variables system variable, respectively. For more information about session state tracking, see Section5.1.15, “Server Tracking of Client Session State”."
+    },
+    "automatic_sp_privileges": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "When this variable has a value of 1 (the default), the server automatically grants the EXECUTE and ALTER ROUTINE privileges to the creator of a stored routine, if the user cannot already execute and alter or drop the routine. (The ALTER ROUTINE privilege is required to drop the routine.) The server also automatically drops those privileges from the creator when the routine is dropped. If automatic_sp_privileges is 0, the server does not automatically add or drop these privileges. The creator of a routine is the account used to execute the CREATE statement for it. This might not be the same as the account named as the DEFINER in the routine definition. If you start mysqld with --skip-new, automatic_sp_privileges is set to OFF. See also Section23.2.2, “Stored Routines and MySQL Privileges”."
+    },
+    "transaction_alloc_block_size": {
+        "max": 131072,
+        "min": 1024,
+        "type": "integer",
+        "description": "The amount in bytes by which to increase a per-transaction memory pool which needs memory. See the description of transaction_prealloc_size."
+    },
+    "innodb_old_blocks_time": {
+        "max": 4294967295,
+        "min": 0,
+        "type": "integer",
+        "description": "Non-zero values protect against the buffer pool being filled by data that is referenced only for a brief period, such as during a full table scan. Increasing this value offers more protection against full table scans interfering with data cached in the buffer pool. Specifies how long in milliseconds a block inserted into the old sublist must stay there after its first access before it can be moved to the new sublist. If the value is 0, a block inserted into the old sublist moves immediately to the new sublist the first time it is accessed, no matter how soon after insertion the access occurs. If the value is greater than 0, blocks remain in the old sublist until an access occurs at least that many milliseconds after the first access. For example, a value of 1000 causes blocks to stay in the old sublist for 1 second after the first access before they become eligible to move to the new sublist. The default value is 1000. This variable is often used in combination with innodb_old_blocks_pct . For more information, see Section 14.8.3.3, “Making the Buffer Pool Scan Resistant”. For information about buffer pool management, the LRU algorithm, and eviction policies, see Section 14.5.1, “Buffer Pool”."
+    },
+    "show_compatibility_56": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "The INFORMATION_SCHEMA has tables that contain system and status variable information (see Section24.3.11, “The INFORMATION_SCHEMA GLOBAL_VARIABLES and SESSION_VARIABLES Tables”, and Section24.3.10, “The INFORMATION_SCHEMA GLOBAL_STATUS and SESSION_STATUS Tables”). As of MySQL 5.7.6, the Performance Schema also contains system and status variable tables (see Section25.12.13, “Performance Schema System Variable Tables”, and Section25.12.14, “Performance Schema Status Variable Tables”). The Performance Schema tables are intended to replace the INFORMATION_SCHEMA tables, which are deprecated as of MySQL 5.7.6 and are removed in MySQL 8.0. For advice on migrating away from the INFORMATION_SCHEMA tables to the Performance Schema tables, see Section25.20, “Migrating to Performance Schema System and Status Variable Tables”. To assist in the migration, you can use the show_compatibility_56 system variable, which affects whether MySQL 5.6 compatibility is enabled with respect to how system and status variable information is provided by the INFORMATION_SCHEMA and Performance Schema tables, and also by the SHOW VARIABLES and SHOW STATUS statements. The following discussion describes the effects of show_compatibility_56: For better understanding, it is strongly recommended that you also read these sections: The show_compatibility_56 system variable affects these aspects of server operation regarding system and status variables: This list summarizes the effects of show_compatibility_56, with additional details given later: The following descriptions detail the effect of setting show_compatibility_56 to ON or OFF in the contexts in which this variable applies. SHOW GLOBAL VARIABLES statement: SHOW [SESSION | LOCAL] VARIABLES statement: SHOW GLOBAL STATUS statement: SHOW [SESSION | LOCAL] STATUS statement: In MySQL 5.7.6 and 5.7.7, for each of the SHOW statements just described, use of a WHERE clause produces a warning when show_compatibility_56=ON and an error when show_compatibility_56=OFF. (This applies to WHERE clauses that are not optimized away. For example, WHERE 1 is trivially true, is optimized away, and thus produces no warning or error.) This behavior does not occur as of MySQL 5.7.8; WHERE is supported as before 5.7.6. INFORMATION_SCHEMA tables (GLOBAL_VARIABLES, SESSION_VARIABLES, GLOBAL_STATUS, and SESSION_STATUS): Performance Schema system variable tables: Performance Schema status variable tables: Replica status variables:"
+    },
+    "innodb_replication_delay": {
+        "max": 10000,
+        "min": 0,
+        "type": "integer",
+        "description": "The replication thread delay in milliseconds on a replica server if innodb_thread_concurrency is reached."
+    },
+    "max_sort_length": {
+        "max": 8388608,
+        "min": 4,
+        "type": "integer",
+        "description": "The number of bytes to use when sorting data values. The server uses only the first max_sort_length bytes of each value and ignores the rest. Consequently, values that differ only after the first max_sort_length bytes compare as equal for GROUP BY, ORDER BY, and DISTINCT operations. Increasing the value of max_sort_length may require increasing the value of sort_buffer_size as well. For details, see Section8.2.1.14, “ORDER BY Optimization”"
+    },
+    "innodb_page_cleaners": {
+        "max": 8,
+        "min": 1,
+        "type": "integer",
+        "description": "The number of page cleaner threads that flush dirty pages from buffer pool instances. Page cleaner threads perform flush list and LRU flushing. A single page cleaner thread was introduced in MySQL 5.6 to offload buffer pool flushing work from the InnoDB master thread. In MySQL 5.7, InnoDB provides support for multiple page cleaner threads. A value of 1 maintains the pre-MySQL 5.7 configuration in which there is a single page cleaner thread. When there are multiple page cleaner threads, buffer pool flushing tasks for each buffer pool instance are dispatched to idle page cleaner threads. The innodb_page_cleaners default value was changed from 1 to 4 in MySQL 5.7. If the number of page cleaner threads exceeds the number of buffer pool instances, innodb_page_cleaners is automatically set to the same value as innodb_buffer_pool_instances . If your workload is write-IO bound when flushing dirty pages from buffer pool instances to data files, and if your system hardware has available capacity, increasing the number of page cleaner threads may help improve write-IO throughput. Multithreaded page cleaner support is extended to shutdown and recovery phases in MySQL 5.7. The setpriority() system call is used on Linux platforms where it is supported, and where the mysqld execution user is authorized to give page_cleaner threads priority over other MySQL and InnoDB threads to help page flushing keep pace with the current workload. setpriority() support is indicated by this InnoDB startup message: For systems where server startup and shutdown is not managed by systemd, mysqld execution user authorization can be configured in /etc/security/limits.conf. For example, if mysqld is run under the mysql user, you can authorize the mysql user by adding these lines to /etc/security/limits.conf: For systemd managed systems, the same can be achieved by specifying LimitNICE=-20 in a localized systemd configuration file. For example, create a file named override.conf in /etc/systemd/system/mysqld.service.d/override.conf and add this entry: After creating or changing override.conf, reload the systemd configuration, then tell systemd to restart the MySQL service: For more information about using a localized systemd configuration file, see Configuring systemd for MySQL. After authorizing the mysqld execution user, use the cat command to verify the configured Nice limits for the mysqld process:"
+    },
+    "innodb_sync_spin_loops": {
+        "max": 30000,
+        "min": 0,
+        "type": "integer",
+        "description": "The number of times a thread waits for an InnoDB mutex to be freed before the thread is suspended."
+    },
+    "explicit_defaults_for_timestamp": {
+        "enum_values": [
+            "ON",
+            "OFF"
+        ],
+        "type": "enum",
+        "description": "This system variable determines whether the server enables certain nonstandard behaviors for default values and NULL-value handling in TIMESTAMP columns. By default, explicit_defaults_for_timestamp is disabled, which enables the nonstandard behaviors. If explicit_defaults_for_timestamp is disabled, the server enables the nonstandard behaviors and handles TIMESTAMP columns as follows: The nonstandard behaviors just described are deprecated; expect them to be removed in a future release of MySQL. If explicit_defaults_for_timestamp is enabled, the server disables the nonstandard behaviors and handles TIMESTAMP columns as follows: If explicit_defaults_for_timestamp is disabled at server startup, this warning appears in the error log: As indicated by the warning, to disable the deprecated nonstandard behaviors, enable the explicit_defaults_for_timestamp system variable at server startup. For additional information, see Section11.2.6, “Automatic Initialization and Updating for TIMESTAMP and DATETIME”."
+    },
+    "ft_min_word_len": {
+        "max": 8,
+        "min": 1,
+        "type": "integer",
+        "description": "The minimum length of the word to be included in a MyISAM FULLTEXT index."
+    },
+    "stored_program_cache": {
+        "max": 524288,
+        "min": 16,
+        "type": "integer",
+        "description": "Sets a soft upper limit for the number of cached stored routines per connection. The value of this variable is specified in terms of the number of stored routines held in each of the two caches maintained by the MySQL Server for, respectively, stored procedures and stored functions. Whenever a stored routine is executed this cache size is checked before the first or top-level statement in the routine is parsed; if the number of routines of the same type (stored procedures or stored functions according to which is being executed) exceeds the limit specified by this variable, the corresponding cache is flushed and memory previously allocated for cached objects is freed. This allows the cache to be flushed safely, even when there are dependencies between stored routines."
+    },
+    "connect_timeout": {
+        "max": 31536000,
+        "min": 2,
+        "type": "integer",
+        "description": "The number of seconds that the mysqld server waits for a connect packet before responding with Bad handshake. The default value is 10 seconds. Increasing the connect_timeout value might help if clients frequently encounter errors of the form Lost connection to MySQL server at 'XXX', system error: errno."
+    },
+    "innodb_adaptive_hash_index_parts": {
+        "max": 512,
+        "min": 1,
+        "type": "integer",
+        "description": "Partitions the adaptive hash index search system. Each index is bound to a specific partition, with each partition protected by a separate latch. In earlier releases, the adaptive hash index search system was protected by a single latch (btr_search_latch) which could become a point of contention. With the introduction of the innodb_adaptive_hash_index_parts option, the search system is partitioned into 8 parts by default. The maximum setting is 512. For related information, see Section 14.5.3, “Adaptive Hash Index”."
+    }
+}
