@@ -3,12 +3,11 @@
 This is the source code to the paper **"AgentTune: A Multi-Agent Collaborative Framework for Database Knob Tuning"**. Please refer to the paper for the experimental details.
 
 ## Table of Content
-* [Environment Installation](https://anonymous.4open.science/r/AgentTune)
-* [Workload Preparation](https://anonymous.4open.science/r/AgentTune)
-* [Quick Start](https://anonymous.4open.science/r/AgentTune)
-* [Scalability Study](https://anonymous.4open.science/r/AgentTune)
-* [Ablation Study](https://anonymous.4open.science/r/AgentTune)
-
+* [Environment Installation]
+* [Workload Preparation]
+* [Quick Start]
+* [Scalability Study]
+* [Ablation Study]
 
 ## Environment Installation
 
