@@ -23,6 +23,8 @@ with open(file_path, "r") as f:
     workload_features = f.read().strip()  
 database_kernel=config['knob selector']['database_kernel']
 hardware=config['knob selector']['hardware']
+database_scale=config['knob selector']['database_scale']
+
 
 def extract_knob_intervals_with_ids(text):
     # Split by Knob Paragraph
@@ -104,6 +106,7 @@ def call_open_source_llm(model,knob_list):
             Workload and Database information: 
             - Workload Features: {workload_features}
             - Database Kernel: {database_kernel}
+            - Database Scale: {database_scale}
             - Hardware: {hardware}
             Output Format:
             "knob_name"{{
@@ -113,7 +116,7 @@ def call_open_source_llm(model,knob_list):
                 "special_value": SPECIAL_VALUE
             }} 
             Now let us think step by step.        
-        """.format(knob=knobs,  workload_features = workload_features, database_kernel=database_kernel, hardware=hardware)
+        """.format(knob=knobs,  workload_features = workload_features, database_kernel=database_kernel, hardware=hardware, database_scale=database_scale)
     }
     ]
 

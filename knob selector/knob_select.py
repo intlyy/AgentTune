@@ -17,6 +17,7 @@ with open(candidate_knobs, "r") as f:
 knob_num=config['knob selector']['knob_num']
 database_kernel=config['knob selector']['database_kernel']
 hardware=config['knob selector']['hardware']
+database_scale=config['knob selector']['database_scale']
 
 messages = [
     {"role": "system", "content": "You are an experienced database administrators, skilled in database knob tuning. You will determine which knobs are worth tuning. You only tune knobs that have a significant impact on DBMS performance."},
@@ -30,6 +31,7 @@ messages = [
             Workload and Database information: 
             - Workload Features: {workload_features}
             - Database Kernel: {database_kernel}
+            - Database Scale: {database_scale}
             - Hardware: {hardware}
             Output Format:
             Knobs should be formatted as follows:
@@ -37,7 +39,7 @@ messages = [
                 "knob_serial number", ......
             }} 
             Now let us think step by step.        
-        """.format(knob_num=knob_num, knobs=knobs, workload_features = workload_features, database_kernel=database_kernel, hardware=hardware)
+        """.format(knob_num=knob_num, knobs=knobs, workload_features = workload_features, database_kernel=database_kernel, hardware=hardware, database_scale=database_scale)
     }
 ]
 

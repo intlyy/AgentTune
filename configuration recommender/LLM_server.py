@@ -15,6 +15,7 @@ with open(file_path, "r") as f:
     workload_features = f.read().strip()  
 database_kernel=config['knob selector']['database_kernel']
 hardware=config['knob selector']['hardware']
+database_scale=config['knob selector']['database_scale']
 
 knob_list_path = config['range pruner']['output_file']
 with open(knob_list_path,"r") as f:
@@ -179,6 +180,7 @@ def process_data():
                 Workload and Database information: 
                 - Workload Features: {workload_features}
                 - Database Kernel: {database_kernel}
+                - Database Scale: {database_scale}
                 - Hardware: {hardware}
                 Historical Knob Tuning Tasks:
                 {history}
@@ -195,7 +197,7 @@ def process_data():
                 }}
                 Now, let's think step by step.
 
-            """.format(knob=knobs, inner_metric=inner_metrics, last_knob = last_knobs, now_inner_metric = now_inner_metrics, performance = throughput, db_metric = db_metric,history="\n\n".join(history_entries), workload_features=workload_features, database_kernel=database_kernel, hardware=hardware)
+            """.format(knob=knobs, inner_metric=inner_metrics, last_knob = last_knobs, now_inner_metric = now_inner_metrics, performance = throughput, db_metric = db_metric,history="\n\n".join(history_entries), workload_features=workload_features, database_kernel=database_kernel, hardware=hardware,database_scale=database_scale)
         }
         ]
 

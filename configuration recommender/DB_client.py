@@ -413,5 +413,6 @@ if __name__ == "__main__":
         iteration = iteration+1
     
     #The optimal configuration found
-    print("best_knob:",best_knob)
-    print("best_throughput:",best_throughput)
+    with open("./configuration recommender/record/optimal configuration", "w", encoding="utf-8") as f:
+        print("best_knob:", best_knob, file=f)
+        print("best_throughput:", best_throughput, file=f)
