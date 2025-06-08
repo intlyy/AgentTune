@@ -1,0 +1,43 @@
+First, let's analyze the characteristics of the workload:
+
+1. Workload Type: OLTP (Online Transaction Processing)
+2. Query Distribution: A mix of queries with a primary emphasis on SELECT followed by INSERT, UPDATE, and DELETE.
+3. Single-threaded.
+4. Substantial data volume across a moderate number of tables.
+
+Given the above characteristics, we'll target PostgreSQL database knobs that optimize performance for transaction-heavy operations, optimizing read and write efficiencies, and ensuring transactional integrity under a single-threaded scenario. 
+
+Now, let's proceed to recommend optimal knob configurations for PostgreSQL 12.2 based on the hardware and workload provided:
+
+- **max_connections**: This defines the maximum number of concurrent connections to the database. Given that the workload runs single-threaded, this doesn't need to be very high. We can keep this low to save on overhead.
+  
+- **shared_buffers**: This is the amount of memory the database dedicates for caching data. More memory allows more data to be held in faster RAM rather than needing to be fetched from slower disk storage. For 64 GB RAM, setting this to about 25% of RAM should be a balanced choice.
+
+- **effective_cache_size**: This parameter helps the planner by giving it an estimate of how much memory is available for disk caching by the operating system and within PostgreSQL itself, outside of `shared_buffers`. Given the substantial RAM and the heavy read nature of OLTP, setting this to about 50% of total RAM should give good results.
+
+- **maintenance_work_mem**: For maintenance operations, such as VACUUM, having more memory can help speed up those processes especially with such a large number of tables. 
+
+- **work_mem**: This defines the amount of memory used for internal sort operations and hash tables before writing to temporary disk files. As queries in an OLTP workload are typically not huge aggregate or join operations, this can be moderate.
+
+- **wal_buffers**: Changes first go to the WAL (Write-Ahead Logging) buffer, so making sure this is sufficiently sized can aid in transactional write performance.
+
+- **checkpoint_completion_target**: This is the target time to complete checkpoints. Spreading out checkpoints can reduce the IO spikes.
+
+- **random_page_cost**: This setting models the cost of a non-sequentially-fetched disk page; since the database is on HDD, which has poorer random read performance than SSD, it could be adjusted slightly higher to encourage the planner to favor sequential plans.
+
+Based on these considerations, the configuration recommendations for PostgreSQL running the described workload on the given hardware would be:
+
+```json
+{
+    "max_connections": 20,
+    "shared_buffers": "16GB",
+    "effective_cache_size": "32GB",
+    "maintenance_work_mem": "1GB",
+    "work_mem": "64MB",
+    "wal_buffers": "16MB",
+    "checkpoint_completion_target": 0.9,
+    "random_page_cost": 4.0
+}
+```
+
+This config aims to balance performance across transaction handling, data integrity, and maintenance operations, while making effective use of available system resources.
