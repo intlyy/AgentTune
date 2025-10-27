@@ -1,4 +1,4 @@
-# AgentTune: A Multi-Agent Collaborative Framework for Database Knob Tuning
+# AgentTune: A Multi-Agent Collaborative Framework for Database Knob Tuning *[Accepted by SIGMOD 2026]*
 
 This is the source code to the paper **"AgentTune: A Multi-Agent Collaborative Framework for Database Knob Tuning"**. Please refer to the paper for the experimental details.
 
